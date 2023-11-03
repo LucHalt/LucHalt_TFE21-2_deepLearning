@@ -1,0 +1,43 @@
+2023-11-03 13:23:44,803 INFO    Thread-24 (_run_job):26308 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2023-11-03 13:23:44,803 INFO    Thread-24 (_run_job):26308 [wandb_setup.py:_flush():76] Configure stats pid to 26308
+2023-11-03 13:23:44,803 INFO    Thread-24 (_run_job):26308 [wandb_setup.py:_flush():76] Loading settings from C:\Users\Lucas\.config\wandb\settings
+2023-11-03 13:23:44,804 INFO    Thread-24 (_run_job):26308 [wandb_setup.py:_flush():76] Loading settings from C:\Users\Lucas\Documents\GitHub\LucHalt_TFE21-2_deepLearning\code\wandb\settings
+2023-11-03 13:23:44,804 INFO    Thread-24 (_run_job):26308 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'project': 'sweep', 'entity': 'luchalt', 'root_dir': 'C:\\Users\\Lucas\\Documents\\GitHub\\LucHalt_TFE21-2_deepLearning\\code', 'sweep_id': 'biwsutxg', 'run_id': '1xee0wtm', 'sweep_param_path': 'C:\\Users\\Lucas\\Documents\\GitHub\\LucHalt_TFE21-2_deepLearning\\code\\wandb\\sweep-biwsutxg\\config-1xee0wtm.yaml'}
+2023-11-03 13:23:44,804 INFO    Thread-24 (_run_job):26308 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-11-03 13:23:44,804 INFO    Thread-24 (_run_job):26308 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-11-03 13:23:44,805 INFO    Thread-24 (_run_job):26308 [wandb_init.py:_log_setup():528] Logging user logs to C:\Users\Lucas\Documents\GitHub\LucHalt_TFE21-2_deepLearning\code\wandb\run-20231103_132344-1xee0wtm\logs\debug.log
+2023-11-03 13:23:44,805 INFO    Thread-24 (_run_job):26308 [wandb_init.py:_log_setup():529] Logging internal logs to C:\Users\Lucas\Documents\GitHub\LucHalt_TFE21-2_deepLearning\code\wandb\run-20231103_132344-1xee0wtm\logs\debug-internal.log
+2023-11-03 13:23:44,806 INFO    Thread-24 (_run_job):26308 [wandb_init.py:_jupyter_setup():474] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x000001B3480BAA50>
+2023-11-03 13:23:44,806 INFO    Thread-24 (_run_job):26308 [wandb_init.py:init():568] calling init triggers
+2023-11-03 13:23:44,807 INFO    Thread-24 (_run_job):26308 [wandb_init.py:init():575] wandb.init called with sweep_config: {'batch_size': 64, 'epochs': 5, 'learning_rate': [0.001, 0.003, 0.005], 'optimizer': 'adam'}
+config: {}
+2023-11-03 13:23:44,808 INFO    Thread-24 (_run_job):26308 [wandb_init.py:init():618] starting backend
+2023-11-03 13:23:44,808 INFO    Thread-24 (_run_job):26308 [wandb_init.py:init():622] setting up manager
+2023-11-03 13:23:44,827 INFO    Thread-24 (_run_job):26308 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2023-11-03 13:23:44,827 INFO    Thread-24 (_run_job):26308 [wandb_init.py:init():628] backend started and connected
+2023-11-03 13:23:44,909 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_config_callback():1324] config_cb None None {'batch_size': 64, 'epochs': 5, 'learning_rate': [0.001, 0.003, 0.005], 'optimizer': 'adam'}
+2023-11-03 13:23:44,910 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_label_probe_notebook():1276] probe notebook
+2023-11-03 13:23:44,910 INFO    Thread-24 (_run_job):26308 [wandb_init.py:init():720] updated telemetry
+2023-11-03 13:23:45,119 INFO    Thread-24 (_run_job):26308 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2023-11-03 13:23:46,572 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_on_init():2220] communicating current version
+2023-11-03 13:23:47,844 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_on_init():2229] got version response 
+2023-11-03 13:23:47,844 INFO    Thread-24 (_run_job):26308 [wandb_init.py:init():804] starting run threads in backend
+2023-11-03 13:23:49,245 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_console_start():2199] atexit reg
+2023-11-03 13:23:49,246 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_redirect():2054] redirect: wrap_raw
+2023-11-03 13:23:49,246 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_redirect():2119] Wrapping output streams.
+2023-11-03 13:23:49,246 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_redirect():2144] Redirects installed.
+2023-11-03 13:23:49,249 INFO    Thread-24 (_run_job):26308 [wandb_init.py:init():845] run started, returning control to user process
+2023-11-03 13:23:49,250 INFO    Thread-24 (_run_job):26308 [wandb_config.py:__setitem__():151] config set architecture_name = V01 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x000001B3635AB090>>
+2023-11-03 13:23:49,250 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_config_callback():1324] config_cb architecture_name V01 None
+2023-11-03 13:23:49,251 INFO    Thread-24 (_run_job):26308 [wandb_config.py:__setitem__():151] config set dataset_name = MNIST - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x000001B3635AB090>>
+2023-11-03 13:23:49,251 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_config_callback():1324] config_cb dataset_name MNIST None
+2023-11-03 13:23:51,391 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_finish():1934] finishing run luchalt/sweep/1xee0wtm
+2023-11-03 13:23:51,391 INFO    Thread-24 (_run_job):26308 [jupyter.py:save_history():445] not saving jupyter history
+2023-11-03 13:23:51,391 INFO    Thread-24 (_run_job):26308 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-11-03 13:23:51,391 INFO    Thread-24 (_run_job):26308 [wandb_init.py:_jupyter_teardown():456] cleaning up jupyter logic
+2023-11-03 13:23:51,391 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_atexit_cleanup():2168] got exitcode: 1
+2023-11-03 13:23:51,391 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_restore():2151] restore
+2023-11-03 13:23:51,407 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_restore():2157] restore done
+2023-11-03 13:24:00,630 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_footer_history_summary_info():3599] rendering history
+2023-11-03 13:24:00,630 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_footer_history_summary_info():3631] rendering summary
+2023-11-03 13:24:00,630 INFO    Thread-24 (_run_job):26308 [wandb_run.py:_footer_sync_info():3558] logging synced files

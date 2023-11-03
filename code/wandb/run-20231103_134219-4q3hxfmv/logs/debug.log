@@ -1,0 +1,36 @@
+2023-11-03 13:42:19,667 INFO    Thread-42 (_run_job):26308 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2023-11-03 13:42:19,667 INFO    Thread-42 (_run_job):26308 [wandb_setup.py:_flush():76] Configure stats pid to 26308
+2023-11-03 13:42:19,667 INFO    Thread-42 (_run_job):26308 [wandb_setup.py:_flush():76] Loading settings from C:\Users\Lucas\.config\wandb\settings
+2023-11-03 13:42:19,669 INFO    Thread-42 (_run_job):26308 [wandb_setup.py:_flush():76] Loading settings from C:\Users\Lucas\Documents\GitHub\LucHalt_TFE21-2_deepLearning\code\wandb\settings
+2023-11-03 13:42:19,669 INFO    Thread-42 (_run_job):26308 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'project': 'sweep', 'entity': 'luchalt', 'root_dir': 'C:\\Users\\Lucas\\Documents\\GitHub\\LucHalt_TFE21-2_deepLearning\\code', 'run_id': '4q3hxfmv', 'sweep_param_path': 'C:\\Users\\Lucas\\Documents\\GitHub\\LucHalt_TFE21-2_deepLearning\\code\\wandb\\sweep-btzlou5x\\config-4q3hxfmv.yaml', 'sweep_id': 'btzlou5x'}
+2023-11-03 13:42:19,669 INFO    Thread-42 (_run_job):26308 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-11-03 13:42:19,669 INFO    Thread-42 (_run_job):26308 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-11-03 13:42:19,670 INFO    Thread-42 (_run_job):26308 [wandb_init.py:_log_setup():528] Logging user logs to C:\Users\Lucas\Documents\GitHub\LucHalt_TFE21-2_deepLearning\code\wandb\run-20231103_134219-4q3hxfmv\logs\debug.log
+2023-11-03 13:42:19,670 INFO    Thread-42 (_run_job):26308 [wandb_init.py:_log_setup():529] Logging internal logs to C:\Users\Lucas\Documents\GitHub\LucHalt_TFE21-2_deepLearning\code\wandb\run-20231103_134219-4q3hxfmv\logs\debug-internal.log
+2023-11-03 13:42:19,671 INFO    Thread-42 (_run_job):26308 [wandb_init.py:_jupyter_setup():474] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x000001B36EAFD3D0>
+2023-11-03 13:42:19,672 INFO    Thread-42 (_run_job):26308 [wandb_init.py:init():568] calling init triggers
+2023-11-03 13:42:19,673 INFO    Thread-42 (_run_job):26308 [wandb_init.py:init():575] wandb.init called with sweep_config: {'batch_size': 16, 'epochs': 5, 'learning_rate': 0.001, 'optimizer': 'adam'}
+config: {}
+2023-11-03 13:42:19,673 INFO    Thread-42 (_run_job):26308 [wandb_init.py:init():618] starting backend
+2023-11-03 13:42:19,673 INFO    Thread-42 (_run_job):26308 [wandb_init.py:init():622] setting up manager
+2023-11-03 13:42:19,753 INFO    Thread-42 (_run_job):26308 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2023-11-03 13:42:19,769 INFO    Thread-42 (_run_job):26308 [wandb_init.py:init():628] backend started and connected
+2023-11-03 13:42:19,825 INFO    Thread-42 (_run_job):26308 [wandb_run.py:_config_callback():1324] config_cb None None {'batch_size': 16, 'epochs': 5, 'learning_rate': 0.001, 'optimizer': 'adam'}
+2023-11-03 13:42:19,905 INFO    Thread-42 (_run_job):26308 [wandb_run.py:_label_probe_notebook():1276] probe notebook
+2023-11-03 13:42:19,954 INFO    Thread-42 (_run_job):26308 [wandb_init.py:init():720] updated telemetry
+2023-11-03 13:42:20,195 INFO    Thread-42 (_run_job):26308 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2023-11-03 13:42:22,355 INFO    Thread-42 (_run_job):26308 [wandb_run.py:_on_init():2220] communicating current version
+2023-11-03 13:42:23,606 INFO    Thread-42 (_run_job):26308 [wandb_run.py:_on_init():2229] got version response 
+2023-11-03 13:42:23,606 INFO    Thread-42 (_run_job):26308 [wandb_init.py:init():804] starting run threads in backend
+2023-11-03 13:42:25,205 INFO    Thread-42 (_run_job):26308 [wandb_run.py:_console_start():2199] atexit reg
+2023-11-03 13:42:25,205 INFO    Thread-42 (_run_job):26308 [wandb_run.py:_redirect():2054] redirect: wrap_raw
+2023-11-03 13:42:25,205 INFO    Thread-42 (_run_job):26308 [wandb_run.py:_redirect():2119] Wrapping output streams.
+2023-11-03 13:42:25,205 INFO    Thread-42 (_run_job):26308 [wandb_run.py:_redirect():2144] Redirects installed.
+2023-11-03 13:42:25,205 INFO    Thread-42 (_run_job):26308 [wandb_init.py:init():845] run started, returning control to user process
+2023-11-03 13:42:25,205 INFO    Thread-42 (_run_job):26308 [wandb_config.py:__setitem__():151] config set architecture_name = V01 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x000001B372BFE0D0>>
+2023-11-03 13:42:25,205 INFO    Thread-42 (_run_job):26308 [wandb_run.py:_config_callback():1324] config_cb architecture_name V01 None
+2023-11-03 13:42:25,205 INFO    Thread-42 (_run_job):26308 [wandb_config.py:__setitem__():151] config set dataset_name = MNIST - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x000001B372BFE0D0>>
+2023-11-03 13:42:25,205 INFO    Thread-42 (_run_job):26308 [wandb_run.py:_config_callback():1324] config_cb dataset_name MNIST None
+2023-11-03 13:45:12,180 WARNING MsgRouterThr:26308 [router.py:message_loop():77] message_loop has been closed
+2023-11-03 13:45:12,851 INFO    MainThread:26308 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-11-03 13:45:12,851 INFO    MainThread:26308 [wandb_init.py:_pause_backend():438] pausing backend
