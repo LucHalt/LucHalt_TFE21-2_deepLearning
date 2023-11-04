@@ -1,0 +1,52 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.11.6",
+    "heartbeatAt": "2023-11-04T17:18:13.666595",
+    "startedAt": "2023-11-04T17:18:09.578570",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "code/pepsi_p62k_a9947.ipynb",
+    "codePathLocal": null,
+    "root": "C:/Users/Lucas/Documents/GitHub/LucHalt_TFE21-2_deepLearning",
+    "git": {
+        "remote": "https://github.com/LucHalt/LucHalt_TFE21-2_deepLearning.git",
+        "commit": "34c01c495b152f0e058643298ba406a9a6aa9dcc"
+    },
+    "email": "lucas.halt@t-online.de",
+    "host": "i7Brett",
+    "username": "Lucas",
+    "executable": "C:\\Users\\Lucas\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 1792.0,
+        "min": 0.0,
+        "max": 1992.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1792.0,
+            "min": 0.0,
+            "max": 1992.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 237.24120712280273,
+            "used": 199.19426345825195
+        }
+    },
+    "gpu": "NVIDIA GeForce MX150",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce MX150",
+            "memory_total": 2147483648
+        }
+    ],
+    "memory": {
+        "total": 7.884510040283203
+    }
+}

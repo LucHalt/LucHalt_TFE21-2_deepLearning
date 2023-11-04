@@ -1,0 +1,48 @@
+
+[34m[1mwandb[39m[22m: [33mWARNING[39m The save_model argument by default saves the model in the HDF5 format that cannot save custom objects like subclassed models and custom layers. This behavior will be deprecated in a future release in favor of the SavedModel format. Meanwhile, the HDF5 model is saved as W&B files and the SavedModel as W&B Artifacts.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+235/235 [==============================] - ETA: 0s - loss: 1.5376 - accuracy: 0.8109
+C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\keras\src\engine\training.py:3079: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+
+235/235 [==============================] - ETA: 0s - loss: 1.5376 - accuracy: 0.8109INFO:tensorflow:Assets written to: C:\Users\Lucas\Documents\GitHub\LucHalt_TFE21-2_deepLearning\code\wandb\run-20231104_170033-8deewyez\files\model-best\assets
+INFO:tensorflow:Assets written to: C:\Users\Lucas\Documents\GitHub\LucHalt_TFE21-2_deepLearning\code\wandb\run-20231104_170033-8deewyez\files\model-best\assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (C:\Users\Lucas\Documents\GitHub\LucHalt_TFE21-2_deepLearning\code\wandb\run-20231104_170033-8deewyez\files\model-best)... Done. 0.1s
+Traceback (most recent call last):
+  File "C:\Users\Lucas\AppData\Local\Temp\ipykernel_12136\3820709640.py", line 110, in sweep_train
+    wandb.log(data={"val_accuracy": val_accuracy}, step=epoch)
+                                    ^^^^^^^^^^^^
+NameError: name 'val_accuracy' is not defined
+235/235 [==============================] - 86s 354ms/step - loss: 1.5376 - accuracy: 0.8109 - val_loss: 0.2399 - val_accuracy: 0.9640

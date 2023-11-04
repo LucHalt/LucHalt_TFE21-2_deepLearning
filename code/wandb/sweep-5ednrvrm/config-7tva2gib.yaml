@@ -1,0 +1,16 @@
+wandb_version: 1
+
+batch_size:
+  value: 256
+epochs:
+  value: 15
+learning_rate:
+  value: 0.003
+neurons1:
+  value: 56
+neurons2:
+  value: 12
+neurons3:
+  value: 64
+optimizer:
+  value: adam
