@@ -1,0 +1,118 @@
+2023-11-04 21:17:18,462 INFO    Thread-14 (_run_job):14404 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2023-11-04 21:17:18,462 INFO    Thread-14 (_run_job):14404 [wandb_setup.py:_flush():76] Configure stats pid to 14404
+2023-11-04 21:17:18,462 INFO    Thread-14 (_run_job):14404 [wandb_setup.py:_flush():76] Loading settings from C:\Users\Lucas\.config\wandb\settings
+2023-11-04 21:17:18,462 INFO    Thread-14 (_run_job):14404 [wandb_setup.py:_flush():76] Loading settings from C:\Users\Lucas\Documents\GitHub\LucHalt_TFE21-2_deepLearning\code\wandb\settings
+2023-11-04 21:17:18,462 INFO    Thread-14 (_run_job):14404 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'project': 'V01_Neuron_Check', 'entity': 'luchalt', 'root_dir': 'C:\\Users\\Lucas\\Documents\\GitHub\\LucHalt_TFE21-2_deepLearning\\code', 'run_id': 'fk1xdocv', 'sweep_param_path': 'C:\\Users\\Lucas\\Documents\\GitHub\\LucHalt_TFE21-2_deepLearning\\code\\wandb\\sweep-99iq0kyh\\config-fk1xdocv.yaml', 'sweep_id': '99iq0kyh'}
+2023-11-04 21:17:18,462 INFO    Thread-14 (_run_job):14404 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-11-04 21:17:18,462 INFO    Thread-14 (_run_job):14404 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-11-04 21:17:18,462 INFO    Thread-14 (_run_job):14404 [wandb_init.py:_log_setup():528] Logging user logs to C:\Users\Lucas\Documents\GitHub\LucHalt_TFE21-2_deepLearning\code\wandb\run-20231104_211718-fk1xdocv\logs\debug.log
+2023-11-04 21:17:18,462 INFO    Thread-14 (_run_job):14404 [wandb_init.py:_log_setup():529] Logging internal logs to C:\Users\Lucas\Documents\GitHub\LucHalt_TFE21-2_deepLearning\code\wandb\run-20231104_211718-fk1xdocv\logs\debug-internal.log
+2023-11-04 21:17:18,462 INFO    Thread-14 (_run_job):14404 [wandb_init.py:_jupyter_setup():474] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x0000017A5E45B850>
+2023-11-04 21:17:18,462 INFO    Thread-14 (_run_job):14404 [wandb_init.py:init():568] calling init triggers
+2023-11-04 21:17:18,462 INFO    Thread-14 (_run_job):14404 [wandb_init.py:init():575] wandb.init called with sweep_config: {'batch_size': 400, 'epochs': 20, 'learning_rate': 0.005, 'neurons1': 36, 'neurons2': 9, 'neurons3': 73, 'optimizer': 'adam'}
+config: {}
+2023-11-04 21:17:18,462 INFO    Thread-14 (_run_job):14404 [wandb_init.py:init():618] starting backend
+2023-11-04 21:17:18,462 INFO    Thread-14 (_run_job):14404 [wandb_init.py:init():622] setting up manager
+2023-11-04 21:17:18,462 INFO    Thread-14 (_run_job):14404 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2023-11-04 21:17:18,462 INFO    Thread-14 (_run_job):14404 [wandb_init.py:init():628] backend started and connected
+2023-11-04 21:17:18,493 INFO    Thread-14 (_run_job):14404 [wandb_run.py:_config_callback():1324] config_cb None None {'batch_size': 400, 'epochs': 20, 'learning_rate': 0.005, 'neurons1': 36, 'neurons2': 9, 'neurons3': 73, 'optimizer': 'adam'}
+2023-11-04 21:17:18,582 INFO    Thread-14 (_run_job):14404 [wandb_run.py:_label_probe_notebook():1276] probe notebook
+2023-11-04 21:17:18,582 INFO    Thread-14 (_run_job):14404 [wandb_run.py:_label_probe_notebook():1286] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-11-04 21:17:18,582 INFO    Thread-14 (_run_job):14404 [wandb_init.py:init():720] updated telemetry
+2023-11-04 21:17:18,668 INFO    Thread-14 (_run_job):14404 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2023-11-04 21:17:19,655 INFO    Thread-14 (_run_job):14404 [wandb_run.py:_on_init():2220] communicating current version
+2023-11-04 21:17:20,705 INFO    Thread-14 (_run_job):14404 [wandb_run.py:_on_init():2229] got version response 
+2023-11-04 21:17:20,705 INFO    Thread-14 (_run_job):14404 [wandb_init.py:init():804] starting run threads in backend
+2023-11-04 21:17:21,806 INFO    Thread-14 (_run_job):14404 [wandb_run.py:_console_start():2199] atexit reg
+2023-11-04 21:17:21,806 INFO    Thread-14 (_run_job):14404 [wandb_run.py:_redirect():2054] redirect: wrap_raw
+2023-11-04 21:17:21,806 INFO    Thread-14 (_run_job):14404 [wandb_run.py:_redirect():2119] Wrapping output streams.
+2023-11-04 21:17:21,806 INFO    Thread-14 (_run_job):14404 [wandb_run.py:_redirect():2144] Redirects installed.
+2023-11-04 21:17:21,806 INFO    Thread-14 (_run_job):14404 [wandb_init.py:init():845] run started, returning control to user process
+2023-11-04 21:17:21,806 INFO    Thread-14 (_run_job):14404 [wandb_config.py:__setitem__():151] config set architecture_name = V01 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x0000017A033D1490>>
+2023-11-04 21:17:21,806 INFO    Thread-14 (_run_job):14404 [wandb_run.py:_config_callback():1324] config_cb architecture_name V01 None
+2023-11-04 21:17:21,806 INFO    Thread-14 (_run_job):14404 [wandb_config.py:__setitem__():151] config set dataset_name = MNIST - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x0000017A033D1490>>
+2023-11-04 21:17:21,806 INFO    Thread-14 (_run_job):14404 [wandb_run.py:_config_callback():1324] config_cb dataset_name MNIST None
+2023-11-04 21:29:54,510 INFO    Thread-9 (_heartbeat):14404 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionAbortedError: [WinError 10053] Eine bestehende Verbindung wurde softwaregesteuert
+durch den Hostcomputer abgebrochen
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 791, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 492, in _make_request
+    raise new_e
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 468, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 1097, in _validate_conn
+    conn.connect()
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x0000017A0494AB90>: Failed to establish a new connection: [WinError 10053] Eine bestehende Verbindung wurde softwaregesteuert
+durch den Hostcomputer abgebrochen
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 845, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000017A0494AB90>: Failed to establish a new connection: [WinError 10053] Eine bestehende Verbindung wurde softwaregesteuert\r\ndurch den Hostcomputer abgebrochen'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\lib\retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\internal\internal_api.py", line 366, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\wandb\sdk\lib\gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lucas\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000017A0494AB90>: Failed to establish a new connection: [WinError 10053] Eine bestehende Verbindung wurde softwaregesteuert\r\ndurch den Hostcomputer abgebrochen'))
+2023-11-04 21:35:51,566 INFO    Thread-14 (_run_job):14404 [wandb_run.py:_finish():1934] finishing run luchalt/V01_Neuron_Check/fk1xdocv
+2023-11-04 21:35:51,581 INFO    Thread-14 (_run_job):14404 [jupyter.py:save_history():445] not saving jupyter history
+2023-11-04 21:35:51,581 INFO    Thread-14 (_run_job):14404 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-11-04 21:35:51,581 INFO    Thread-14 (_run_job):14404 [wandb_init.py:_jupyter_teardown():456] cleaning up jupyter logic
+2023-11-04 21:35:51,581 INFO    Thread-14 (_run_job):14404 [wandb_run.py:_atexit_cleanup():2168] got exitcode: 0
+2023-11-04 21:35:51,581 INFO    Thread-14 (_run_job):14404 [wandb_run.py:_restore():2151] restore
+2023-11-04 21:35:51,581 INFO    Thread-14 (_run_job):14404 [wandb_run.py:_restore():2157] restore done
+2023-11-04 21:38:40,782 WARNING MsgRouterThr:14404 [router.py:message_loop():77] message_loop has been closed
