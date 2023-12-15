@@ -152,25 +152,19 @@ Sehr kurz
 
 \section{Methodik}
 
+Ziel 
+
 Mein Ziel war in einen der drei vorlesungsbegleitende Benchmarks zu führen und die Anstrengungen vorerst auf dieses Ziel zu legen.
-
 Dafür habe ich mich in der ersten Woche in alle drei Richtungen, maximale Genauigkeit, minimale Labels und minimale Parameter probiert.
-
 Zielerreicht wurde mit dem Netzt welches in \autoref{sec:basis} vorgestellt wurde. Eine kombination von verschiedensten quellen zusammengedrafen und mit etwas glück auf 99,47 \% gebracht
-
 Die weitere Verbesserung wollte ich vor allem automatisieren.
-
 Dafür habe ich Kostenlose Grafikkarten von Kaggle (30 Stunden die Woche) und Colab (12 Stunden am Tag) genutzt. 
-
 Im ersten Schritt wollte ich die Wahl der Hyperparemter meines optimieren. dafür habe ich verschiedene Kombinationen mit weights \& biases sweepen und tracken lassen
-
 
 \section{Basis -  }
 \label{sec:basis}
 
-Das Ausgangsnetz von dem die Untersuchungen ausgehen ist in \autoref{basis} dargestellt. Es hat etwa 62-tausend Parameter und wurde mit dem vollständigen Trainingsdatensatz (60000 Label) trainiert.
-
-Kompeliert mit dem Adam Optimizer mit einer Learining rate von 0.003 Mit einer Batch-Size von 512 ereichte das Modell nach 100 Epochen 99,47  \% val\_accuracy
+Das Ausgangsnetz, von dem die Betrachtungen ausgehen ist in \autoref{basis} dargestellt. Es hat etwa 62-tausend Parameter. Kompiliert mit dem Adam Optimizer, einer Learning-Rate von 0.003 und einem Training mit dem vollständigen Trainingsdatensatz (60000 Label) bei einer Batch-Size von 512 über 100 Epochen erreichte es 99,47\% Genauigkeit.
 
 \begin{lstlisting}[language=Python, caption=Python-Code, label=basis]
 	InputLayer(input_shape=(28,28,1)),
@@ -186,51 +180,40 @@ Kompeliert mit dem Adam Optimizer mit einer Learining rate von 0.003 Mit einer B
 	Dense(10, activation='softmax')
 \end{lstlisting}
 
-Erkenntnis learning rate und batchsize haben einfluss, aber wie?
+\section{Weights and Biases}
 
-Sweep, um filteranzah in conv2d layer zu testen, sowie die des zweitletzten dense layers zu verbessern und batch size zu optieren
-
-\section{N}
-
-
-V02 – Anpassung und Erwwiterung
-Anpassung der Filter- und Neuronen-Anzahl
-Ergänzung um BatchNormalization nach 4)
-
-Reihenfolge Batch, MaxPool, Dropout
-
-Activation Test
-
-\section{wandb}
+Um den Einfluss der Hyperparameter teilautomatisiert zu testen, wird die Sweep-Funktion von Weights \& Biases verwendet (\textcolor{red}{https://docs.wandb.ai/guides/sweeps}. Dabei werden die Hyperparameter aus einem vorgegebenen Raster gewählt, ein Training durchgeführt und die Ergebnisse dokumentiert. Als Methode ist \emph{bayes}, die Bayes'sche Optimierung, zur Maximierung der val\_acc gewählt.
 
 \subsection{Dimensionierung der Filter- und Neuronen-Anzahl}
-Zunächst erfolgte die Untersuchung der Filter-Anzahlen in den beiden Convolution-Layern und der Neuronen-Anzahl des ersten Dense-Layer. Dafür wurde die Sweep-Funktion von Weights \& Biases verwendet ()https://docs.wandb.ai/guides/sweeps). Das Output-Layer beinhaltet in allen folgenden Netzen 10 Neuronen und die \emph{softmax}-Aktivierungsfunktion, damit jeder Klasse (bzw. Zahl) eine Wahrscheinlichkeit zugeordnet wird.\\
-Die Wahl der Kombinationen erfolgt mit der Methode \emph{bayes} zur Maximierung der val\_acc, die aus einem vorgegebenen Raster an Werten versucht eine Verbesserung zu erreichen. Das Raster wurde nach drei Kriterien. Erstens sollte eine Abstufung im Convolution-Teil erfolgen (dieses vorgehen erwies sich mit der Zeit als kontraproduktiv und wurde verworfen). Zweitens sollten nicht nur 2er-Potenzen zur Verfügung stehen. Und letztens sollte die Neuronen-Anzahl im Dense-Layer eine größere Auswahl haben, weil die Meinungen in Foren diesbezüglich streut.\\
-Die Ergebnisse sind in \autoref{fig:filter} dargestellt. Hervorgehoben sind die besten zehn Kombinationen. Die val\_acc war hoch, für eine Filteranzahl der Convolution-Layers um den Wert 28. Für die Neuronen des ersten Dense-Layers konzentrieren sich der erfolgreichen Kombinationen bei den kleineren verfügbaren Werten.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{images/Filter}
-	\caption{2}
+	\caption{Etwa 100 Kombinationen aus Filter- und Neuronen-Anzahlen bewertet nach der val\_accuracy. Dokumentiert mit Weight \& Biases}
 	\label{fig:filter}
 \end{figure}
 
-Für die Wahl wurden noch weitere Kombinationen in den eingegrenzten Bereich getestet. Schlussendlich erwiesen sich 28 Filter in beiden Convolution-Layern als erfolgreich, wodurch das Symmetrie-Bedürfnis wegen der Ähnlichkeit zur Bildgröße von 28x28 Pixeln kurzzeitig befriedigt wurde. Die Befriedigung hielt nur kurz an, da sich für die Neuronen-Anzahl 54 etablierte, was weder eine 2er-Potenz noch ein Vielfaches von 28 ist.\\
+Zunächst erfolgte die Untersuchung der Filter-Anzahlen in den Convolution-Layern und der Neuronen-Anzahl des ersten Dense-Layer. Das Output-Dense-Layer wird bei 10 Neuronen und der \emph{softmax}-Aktivierungsfunktion belassen, damit jeder Klasse eine Wahrscheinlichkeit zugeordnet wird.\\
+Das Raster möglicher Hyperparameter wurde so gewählt, dass (1) eine Abstufung im Convolution-Teil erfolgt, (2) auch Zahlen nicht zur Basis zwei getestet werden und (3) die Parameteranzahl nicht exorbitant groß wird. Das erste Kriterium erwies sich als kontraproduktiv und wird später noch verworfen.\\
+Die Ergebnisse von circa 100 Kombinationen sind in \autoref{fig:filter} dargestellt. Hervorgehoben sind die besten Zehn. Die val\_acc ist hoch, für eine Filteranzahl der Convolution-Layers um den Wert 28. Für die Neuronen des ersten Dense-Layers konzentrieren sich der erfolgreichen Kombinationen bei den kleineren Werten. Nach einem weiter eingegrenztem Sweep sind 28 Filter in beiden Convolution-Layern als gewählt und 54 Neuronen für das Dense-Layer. Das Symmetrie-Bedürfnis erkennt Ähnlichkeiten zur Bildgröße von 28x28 Pixeln und wird gleichzeitig enttäuscht, weil 54 weder eine 2er-Potenz noch ein Vielfaches von 28 ist.
 
 \subsection{Wahl der Aktivierungsfunktionen.}
 
-Für die Wahl der Aktivierungsfunktionen wurden ebenfalls Sweeps durchgeführt. Die Ergebnisse sind in \autoref{fig:activ} abgebildet. Die besten fünf hervorgehoben. Sie haben die Sigmoid-Funktion im Dense-Layer gemeinsam. Bei den Convolution-Layern zeigte über alle Kombinationen hinweg die Relu-Funktion die besten Ergebnisse. Entsprechend wurde gewählt: Relu, Relu, Sigmoid.
+Für die Wahl der Aktivierungsfunktionen wurden ebenfalls Sweeps durchgeführt. Die Ergebnisse sind in \autoref{fig:activ} abgebildet und die besten fünf hervorgehoben. Sie haben die Sigmoid-Funktion im Dense-Layer gemeinsam. Bei den Convolution-Layern zeigte über alle Kombinationen hinweg die Relu-Funktion die stärkste Tendenz zu höher Genauigkeit. Entsprechend wurde gewählt: Relu, Relu, Sigmoid.
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{images/Activ}
-	\caption{1}
+	\caption{Kombinationen der Aktivierungsfunktionen bewertet nach der val\_accuracy. Dokumentiert mit Weight \& Biases}
 	\label{fig:activ}
 \end{figure}
 
 \subsection{BatchNormalization, Dropout und GaussianNoise}
 
-\begin{lstlisting}
+Als drittes wird das Netz zum einen um BatchNormalization vor den MaxPool und Dropout erweitert, weil hiermit konsequent bessere Ergebnisse erzielt wurden.\\
+Die Dropout- und GaussianNoise-Werte wurden ebenfalls mittels Weigts \& Biasses getestet. Als erfolgreich Erwiesen sich Dropouts von 0,4 und GaussianNoise von 0.75. \textcolor{{red}{papers (dropout gege noverfitting)}}. Daraus ergibt sich das in \autoref{wandb} dargestellte Netz mit 95488 Parametern.
+
+\begin{lstlisting} [language=Python, caption=Python-Code, label=wandb]
 	tf.keras.layers.InputLayer(input_shape=(28,28,1)),
 	tf.keras.layers.Conv2D(filters=28, kernel_size=5, padding='same', activation='relu'),
 	tf.keras.layers.BatchNormalization(),
@@ -255,21 +238,105 @@ Für die Wahl der Aktivierungsfunktionen wurden ebenfalls Sweeps durchgeführt. 
 	tf.keras.layers.Dense(10, activation='softmax')
 \end{lstlisting}
 
+\subsection{Callbacks}
 
-Aus insgesamt 250 Kombinationen stellte 
-0.0001
-256 batch
-95488  params
+Hinsichtlich des angestrebten Benchmarks sollte die Genauigkeit noch weiter gesteigert werden. Dafür wird der Trainingsprozess mit Callbacks angereichert.
 
-umso enger die auswahl an hyperparemetern wurde, umso mehr epochen bis zum vergleich
+\subsubsection{Variable Learning Rate}
 
-Untersuchungen der Dropoutwerte zeigte Erfolg 0,4 und GaussianNoise 0.75. Hinsichtlich des papers (dropout gege noverfitting) 
+Zum einen wird EarlyStopping eingesetzt, um den automatisierten Trainingsprozess zu verkürzen und wenig erfolgreiche Druchläufe abzubrechen. Gleichzeitig werden die besten Ergebnisse gespeichert. 
+
+%er = tf.keras.callbacks.EarlyStopping(
+%monitor="val_accuracy",
+%patience=15,
+%restore_best_weights=True
+%)
+
+\subsubsection{Variable Learning Rate}
+
+Um den Trainingsprozess noch weiter zu Beschleunigen wird eine variable Learning-Rate verwendet. In Kombination mit dem EarlyStopping zeigte eine gleichmäßige Reduktion mit jeder Epoche besser Ergebnisse, als die Methode ReduceLROnPlateau.
+
+\begin{lstlisting}[language=Python, caption=Variable Learning-Rate, label=vlr]
+	vlr = tf.keras.callbacks.LearningRateScheduler(lambda x: 1e-3 * 0.995 ** x)
+\end{lstlisting}
+
+\subsection{Data Augmentation}
+
+%
+% datagen = tf.keras.preprocessing.image.ImageDataGenerator(
+%rotation_range=15,
+%zoom_range = 0.15,
+%shear_range=0.1,
+%width_shift_range=0.1,
+%height_shift_range=0.1,
+%rescale=0,
+%fill_mode = 'nearest',
+%horizontal_flip=False,
+%vertical_flip=False)
+%datagen.fit(x_train)
+
+
+\subsection{Netzanpassung}
+
+24C5 means a convolution layer with 24 feature maps using a 5x5 filter and stride 1
+24C5S2 means a convolution layer with 24 feature maps using a 5x5 filter and stride 2
+P2 means max pooling using 2x2 filter and stride 2
+256 means fully connected dense layer with 256 units
+
+784 - [32C3-32C3-32C5S2] - [64C3-64C3-64C5S2] - 128 - 10
+
+\section{batchsize }
+
+während des testens 256 sinnvoll
+gleicher erfolg auch mit 32 aber mehr streuung und hinsichtlich banchmark peaks gewünscht
+
+\section{callbacks}
+
+
+
+\subsection{}
 
 sonstige versuche: adam mit sgd ersetzen erfolglos
 
 
+\section{Variable Learning Rate}
 
-dropout:
+\begin{lstlisting}[language=Python, caption=Variable Learning-Rate, label=vlr]
+	vlr = tf.keras.callbacks.ReduceLROnPlateau(monitor='loss', factor = 0.95, patience=10, min_lr=0.0001)		
+	vlr2 = tf.keras.callbacks.LearningRateScheduler(lambda x: 1e-3 * 0.995 ** x)
+\end{lstlisting}
+
+\section{Optimierung}
+
+Chat GPT:
+Wenn du zwei aufeinanderfolgende Convolutional Layers mit einer Filtergröße von 3x3 verwendest, wird das Netzwerk in der Lage sein, komplexere und nichtlineare Muster zu erlernen. Hier sind ein paar Gründe, warum das der Fall ist:
+
+Receptive-Field-Erweiterung: Die Verwendung von zwei Convolutional Layers mit einer Filtergröße von 3x3 führt zu einem größeren Receptive Field im Vergleich zu einer einzelnen Schicht mit 5x5 Filtergröße. Dadurch kann das Netzwerk über einen größeren Bereich des Eingabebildes Informationen erfassen.
+
+Mehrere Nichtlinearitäten: Jede Convolutional Layer wird durch eine nichtlineare Aktivierungsfunktion wie ReLU aktiviert. Wenn zwei 3x3 Convolutional Layers hintereinander geschaltet werden, werden zwischen den Schichten zwei Aktivierungsfunktionen angewendet, was zu einer stärkeren nichtlinearen Transformation der Eingabedaten führt.
+
+Parameterreduktion: Zwei 3x3 Convolutional Layers haben insgesamt weniger Parameter als eine 5x5 Convolutional Layer. Weniger Parameter bedeuten weniger Berechnungen und weniger Anfälligkeit für Overfitting, da weniger spezifische Features gelernt werden müssen.
+
+Lernen von tieferen Merkmalen: Das Stapeln von mehreren Convolutional Layers hintereinander ermöglicht es dem Netzwerk, hierarchische und abstrakte Merkmale zu lernen. Durch die schrittweise Verfeinerung der Merkmale von einer Schicht zur nächsten können komplexere Repräsentationen des Eingaberaums erzeugt werden.
+
+Dieses Konzept der Verwendung von kleineren Filtern nacheinander anstelle eines einzelnen großen Filters wird oft in modernen Convolutional Neural Networks verwendet, um die Lernfähigkeit und Effizienz zu verbessern. Es trägt dazu bei, dass das Netzwerk tiefergehende und komplexere Muster im Eingaberaum erfassen kann.
+
+
+
+https://doi.org/10.48550/arXiv.2202.01653 
+
+Chat GPT:
+Strided Convolution für Downsampling: Bei Verwendung einer Convolutional Layer mit Strides von 2 werden die Ausgabefeature-Maps aufgrund des größeren Schrittweitenwerts um den Faktor 2 in jeder Dimension reduziert. Das führt zu einer räumlichen Reduzierung der Feature-Maps und erzeugt somit einen Downsampling-Effekt ähnlich dem einer Max-Pooling-Schicht.
+
+Trainierbare Downsampling-Operation: Im Gegensatz zur Max-Pooling-Schicht, die eine festgelegte Operation (Maximum aus einem Fenster) ohne trainierbare Parameter ist, ermöglicht die Verwendung einer Convolutional Layer mit Strides von 2 das Lernen von Downsampling-Operationen. Die Gewichte in der Convolutional Layer werden während des Trainings angepasst, um die beste Darstellung der Daten zu finden, während gleichzeitig eine Reduzierung der räumlichen Dimensionen erfolgt.
+
+End-to-End-Lernen: Durch die Verwendung einer Convolutional Layer für Downsampling wird das Lernen von Merkmalen und Downsampling in einem End-to-End-Modell ermöglicht. Das Netzwerk lernt die geeigneten Filter, um Merkmale zu extrahieren, während es gleichzeitig die räumliche Dimension reduziert, ohne auf separate Schichten wie Max-Pooling zurückgreifen zu müssen.
+
+Flexibilität und Anpassungsfähigkeit: Die Convolutional Layer mit Strides von 2 bietet Flexibilität in Bezug auf die Art des gelernten Downsampling. Das Netzwerk kann verschiedene Arten von Downsampling lernen, die möglicherweise besser zur spezifischen Datenverarbeitung passen als die festgelegte Max-Pooling-Operation.
+
+Die Verwendung einer Strided Convolution für Downsampling bietet somit die Möglichkeit, eine lernbare Downsampling-Operation zu integrieren, die besser in das Gesamtkonzept des neuronalen Netzes eingebunden werden kann und es dem Netzwerk ermöglicht, sowohl Merkmale zu lernen als auch die Dimensionen der Feature-Maps zu reduzieren.
+
+
 
 
 \section{Finale - Mit Sinn und Verständnis}
@@ -327,20 +394,7 @@ Mal schauen was so kommt
 	similar_indices = np.array(similar_indices)
 \end{lstlisting}
 
-24C5 means a convolution layer with 24 feature maps using a 5x5 filter and stride 1
-24C5S2 means a convolution layer with 24 feature maps using a 5x5 filter and stride 2
-P2 means max pooling using 2x2 filter and stride 2
-256 means fully connected dense layer with 256 units
 
-
-784 - [32C3-32C3-32C5S2] - [64C3-64C3-64C5S2] - 128 - 10
-
-\section{batchsize }
-
-während des testens 256 sinnvoll
-gleicher erfolg auch mit 32 aber mehr streuung und hinsichtlich banchmark peaks gewünscht
-
-\section{callbacks}
 
 
 \section{Dropout}
@@ -353,43 +407,6 @@ Geoffrey Hinton hinton@cs.toronto.edu
 Alex Krizhevsky kriz@cs.toronto.edu
 Ilya Sutskever ilya@cs.toronto.edu
 Ruslan Salakhutdinov 
-
-\section{Variable Learning Rate}
-
-\begin{lstlisting}[language=Python, caption=Variable Learning-Rate, label=vlr]
-		vlr = tf.keras.callbacks.ReduceLROnPlateau(monitor='loss', factor = 0.95, patience=10, min_lr=0.0001)		
-		vlr2 = tf.keras.callbacks.LearningRateScheduler(lambda x: 1e-3 * 0.995 ** x)
-\end{lstlisting}
-
-\section{Optimierung}
-
-Chat GPT:
-Wenn du zwei aufeinanderfolgende Convolutional Layers mit einer Filtergröße von 3x3 verwendest, wird das Netzwerk in der Lage sein, komplexere und nichtlineare Muster zu erlernen. Hier sind ein paar Gründe, warum das der Fall ist:
-
-Receptive-Field-Erweiterung: Die Verwendung von zwei Convolutional Layers mit einer Filtergröße von 3x3 führt zu einem größeren Receptive Field im Vergleich zu einer einzelnen Schicht mit 5x5 Filtergröße. Dadurch kann das Netzwerk über einen größeren Bereich des Eingabebildes Informationen erfassen.
-
-Mehrere Nichtlinearitäten: Jede Convolutional Layer wird durch eine nichtlineare Aktivierungsfunktion wie ReLU aktiviert. Wenn zwei 3x3 Convolutional Layers hintereinander geschaltet werden, werden zwischen den Schichten zwei Aktivierungsfunktionen angewendet, was zu einer stärkeren nichtlinearen Transformation der Eingabedaten führt.
-
-Parameterreduktion: Zwei 3x3 Convolutional Layers haben insgesamt weniger Parameter als eine 5x5 Convolutional Layer. Weniger Parameter bedeuten weniger Berechnungen und weniger Anfälligkeit für Overfitting, da weniger spezifische Features gelernt werden müssen.
-
-Lernen von tieferen Merkmalen: Das Stapeln von mehreren Convolutional Layers hintereinander ermöglicht es dem Netzwerk, hierarchische und abstrakte Merkmale zu lernen. Durch die schrittweise Verfeinerung der Merkmale von einer Schicht zur nächsten können komplexere Repräsentationen des Eingaberaums erzeugt werden.
-
-Dieses Konzept der Verwendung von kleineren Filtern nacheinander anstelle eines einzelnen großen Filters wird oft in modernen Convolutional Neural Networks verwendet, um die Lernfähigkeit und Effizienz zu verbessern. Es trägt dazu bei, dass das Netzwerk tiefergehende und komplexere Muster im Eingaberaum erfassen kann.
-
-
-
-https://doi.org/10.48550/arXiv.2202.01653 
-
-Chat GPT:
-Strided Convolution für Downsampling: Bei Verwendung einer Convolutional Layer mit Strides von 2 werden die Ausgabefeature-Maps aufgrund des größeren Schrittweitenwerts um den Faktor 2 in jeder Dimension reduziert. Das führt zu einer räumlichen Reduzierung der Feature-Maps und erzeugt somit einen Downsampling-Effekt ähnlich dem einer Max-Pooling-Schicht.
-
-Trainierbare Downsampling-Operation: Im Gegensatz zur Max-Pooling-Schicht, die eine festgelegte Operation (Maximum aus einem Fenster) ohne trainierbare Parameter ist, ermöglicht die Verwendung einer Convolutional Layer mit Strides von 2 das Lernen von Downsampling-Operationen. Die Gewichte in der Convolutional Layer werden während des Trainings angepasst, um die beste Darstellung der Daten zu finden, während gleichzeitig eine Reduzierung der räumlichen Dimensionen erfolgt.
-
-End-to-End-Lernen: Durch die Verwendung einer Convolutional Layer für Downsampling wird das Lernen von Merkmalen und Downsampling in einem End-to-End-Modell ermöglicht. Das Netzwerk lernt die geeigneten Filter, um Merkmale zu extrahieren, während es gleichzeitig die räumliche Dimension reduziert, ohne auf separate Schichten wie Max-Pooling zurückgreifen zu müssen.
-
-Flexibilität und Anpassungsfähigkeit: Die Convolutional Layer mit Strides von 2 bietet Flexibilität in Bezug auf die Art des gelernten Downsampling. Das Netzwerk kann verschiedene Arten von Downsampling lernen, die möglicherweise besser zur spezifischen Datenverarbeitung passen als die festgelegte Max-Pooling-Operation.
-
-Die Verwendung einer Strided Convolution für Downsampling bietet somit die Möglichkeit, eine lernbare Downsampling-Operation zu integrieren, die besser in das Gesamtkonzept des neuronalen Netzes eingebunden werden kann und es dem Netzwerk ermöglicht, sowohl Merkmale zu lernen als auch die Dimensionen der Feature-Maps zu reduzieren.
 
 
 \section{Sonst noch}
