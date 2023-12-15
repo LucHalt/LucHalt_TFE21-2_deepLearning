@@ -137,52 +137,41 @@ marginal
 }
 
 %opening
-\title{DeepLearning}
+\title{Prüfungsleistung im \glqq Digitale Bildverarbeitung und Mustererkennung\grqq}
+\subtitle{Dokumentation}
 \author{Tim Lucas Halt}
 
 \begin{document}
 
 \maketitle
 
-\begin{abstract}
-
-Sehr kurz
-
-\end{abstract}
-
 \section{Methodik}
 
-Ziel 
+Die Arbeit gliedert sich in zwei Teile. Der Erste enthält Versuche mit dem MNIST-Datensatz vor allem hinsichtlich der maximalen Genauigkeit. Der Zweite einige Experimente mit dem TinySchiller-Datensatz\\
+Angestrebtes Ziel war es die Untersuchungen an MNIST teilautomatisiert ablaufen zu lassen. Als Tool wird dafür Weigts\&Biases verwendet. Es ermöglicht automatische Sweeps  (\textcolor{red}{https://docs.wandb.ai/guides/sweeps} .und Werkzeuge zur Analyse und Dokumentation. Als Grundlage der Untersuchungen dient das Netz in \autoref{basis}, mit dem der erste Accuracy-Benchmark gesetzt wurde. Im ersten Schritt werden die Hyperparameter optimiert. Um möglichst viele automatisiert Kombinationen zu testen, wird GPU-Rechenleistung von Kaggle und Colab verwendet. Die Ergebnisse sind in \autoref{sec:wandb} erläutert. Im zweiten Schritt werden die Callback in das Training integriert, gefolgt von einer Data-Augmentation. Danach wird die Layer-Struktur nochmal verbessert.\\
+Anschließend werden Versuche gezeigt, die Anzahl an Labeln und Parametern zu reduzieren und die Dokumentation mit Einblicken in die Experimente TinySchiller-Datensatz abgeschlossen.
 
-Mein Ziel war in einen der drei vorlesungsbegleitende Benchmarks zu führen und die Anstrengungen vorerst auf dieses Ziel zu legen.
-Dafür habe ich mich in der ersten Woche in alle drei Richtungen, maximale Genauigkeit, minimale Labels und minimale Parameter probiert.
-Zielerreicht wurde mit dem Netzt welches in \autoref{sec:basis} vorgestellt wurde. Eine kombination von verschiedensten quellen zusammengedrafen und mit etwas glück auf 99,47 \% gebracht
-Die weitere Verbesserung wollte ich vor allem automatisieren.
-Dafür habe ich Kostenlose Grafikkarten von Kaggle (30 Stunden die Woche) und Colab (12 Stunden am Tag) genutzt. 
-Im ersten Schritt wollte ich die Wahl der Hyperparemter meines optimieren. dafür habe ich verschiedene Kombinationen mit weights \& biases sweepen und tracken lassen
+\section{MNIST}
 
-\section{Basis -  }
+\subsection{Grundlage}
 \label{sec:basis}
 
 Das Ausgangsnetz, von dem die Betrachtungen ausgehen ist in \autoref{basis} dargestellt. Es hat etwa 62-tausend Parameter. Kompiliert mit dem Adam Optimizer, einer Learning-Rate von 0.003 und einem Training mit dem vollständigen Trainingsdatensatz (60000 Label) bei einer Batch-Size von 512 über 100 Epochen erreichte es 99,47\% Genauigkeit.
 
-\begin{lstlisting}[language=Python, caption=Python-Code, label=basis]
+\begin{lstlisting}[language=Python, caption=Grundlagen-Netz, label=basis]
 	InputLayer(input_shape=(28,28,1)),
 	Conv2D(filter=28, kernel_size=5, padding='same', activation='relu'),
 	MaxPooling2D(2,2),
+	Dropout(0.2),
 	Conv2D(filter=16, kernel_size=5, padding='same', activation='relu'),
 	MaxPooling2D(2,2),
-	layers.Dropout(0.2),
-	layers.Flatten(),
-	layers.Dropout(0.2),
-	layers.Dense(64, kernel_regularizer = tf.keras.regularizers.l2(0.07), activation = 'relu'),
+	Dropout(0.2),
+	Flatten(),
+	Dense(64, kernel_regularizer = tf.keras.regularizers.l2(0.07), activation = 'relu'),
+	Dropout(0.2),
 	GaussianNoise(0.1),
 	Dense(10, activation='softmax')
 \end{lstlisting}
-
-\section{Weights and Biases}
-
-Um den Einfluss der Hyperparameter teilautomatisiert zu testen, wird die Sweep-Funktion von Weights \& Biases verwendet (\textcolor{red}{https://docs.wandb.ai/guides/sweeps}. Dabei werden die Hyperparameter aus einem vorgegebenen Raster gewählt, ein Training durchgeführt und die Ergebnisse dokumentiert. Als Methode ist \emph{bayes}, die Bayes'sche Optimierung, zur Maximierung der val\_acc gewählt.
 
 \subsection{Dimensionierung der Filter- und Neuronen-Anzahl}
 
@@ -193,8 +182,8 @@ Um den Einfluss der Hyperparameter teilautomatisiert zu testen, wird die Sweep-F
 	\label{fig:filter}
 \end{figure}
 
-Zunächst erfolgte die Untersuchung der Filter-Anzahlen in den Convolution-Layern und der Neuronen-Anzahl des ersten Dense-Layer. Das Output-Dense-Layer wird bei 10 Neuronen und der \emph{softmax}-Aktivierungsfunktion belassen, damit jeder Klasse eine Wahrscheinlichkeit zugeordnet wird.\\
-Das Raster möglicher Hyperparameter wurde so gewählt, dass (1) eine Abstufung im Convolution-Teil erfolgt, (2) auch Zahlen nicht zur Basis zwei getestet werden und (3) die Parameteranzahl nicht exorbitant groß wird. Das erste Kriterium erwies sich als kontraproduktiv und wird später noch verworfen.\\
+Zunächst erfolgt die Untersuchung der Filter-Anzahlen in den Convolution-Layern und der Neuronen-Anzahl des ersten Dense-Layer. Das Output-Dense-Layer wird bei 10 Neuronen und der \emph{softmax}-Aktivierungsfunktion belassen, damit jeder Klasse eine Wahrscheinlichkeit zugeordnet wird.\\
+Als Methode ist in Weights\&Biases \emph{bayes}, die Bayes'sche Optimierung, zur Maximierung der val\_accuracy gewählt. (\textcolor{red}{https://docs.wandb.ai/guides/sweeps}. Dabei werden die Hyperparameter aus einem vorgegebenen Raster gewählt, ein Training durchgeführt und die Ergebnisse dokumentiert. Das Raster für die Filter und Neuronen wurde so gewählt, dass (1) eine Abstufung im Convolution-Teil erfolgt, (2) auch Zahlen nicht zur Basis zwei getestet werden und (3) die Parameteranzahl nicht exorbitant groß wird. Das erste Kriterium erwies sich als kontraproduktiv und wird später noch verworfen.\\
 Die Ergebnisse von circa 100 Kombinationen sind in \autoref{fig:filter} dargestellt. Hervorgehoben sind die besten Zehn. Die val\_acc ist hoch, für eine Filteranzahl der Convolution-Layers um den Wert 28. Für die Neuronen des ersten Dense-Layers konzentrieren sich der erfolgreichen Kombinationen bei den kleineren Werten. Nach einem weiter eingegrenztem Sweep sind 28 Filter in beiden Convolution-Layern als gewählt und 54 Neuronen für das Dense-Layer. Das Symmetrie-Bedürfnis erkennt Ähnlichkeiten zur Bildgröße von 28x28 Pixeln und wird gleichzeitig enttäuscht, weil 54 weder eine 2er-Potenz noch ein Vielfaches von 28 ist.
 
 \subsection{Wahl der Aktivierungsfunktionen.}
@@ -210,56 +199,49 @@ Für die Wahl der Aktivierungsfunktionen wurden ebenfalls Sweeps durchgeführt. 
 
 \subsection{BatchNormalization, Dropout und GaussianNoise}
 
-Als drittes wird das Netz zum einen um BatchNormalization vor den MaxPool und Dropout erweitert, weil hiermit konsequent bessere Ergebnisse erzielt wurden.\\
-Die Dropout- und GaussianNoise-Werte wurden ebenfalls mittels Weigts \& Biasses getestet. Als erfolgreich Erwiesen sich Dropouts von 0,4 und GaussianNoise von 0.75. \textcolor{red}{papers (dropout gege noverfitting)}. Daraus ergibt sich das in \autoref{wandb} dargestellte Netz mit 95488 Parametern.
+Als drittes wird das Netz um BatchNormalization vor den MaxPool und Dropout erweitert, um das Model zu stabilisieren. Anschließend wurden die Dropout- und GaussianNoise-Werte getestet, ebenfalls mit Weigts \& Biasses. Als erfolgreich erwiesen sich Dropouts von 0,4 und GaussianNoise von 0,75. \textcolor{red}{papers (dropout gege noverfitting)}.
 
-\begin{lstlisting} [language=Python, caption=Python-Code, label=wandb]
-	tf.keras.layers.InputLayer(input_shape=(28,28,1)),
-	tf.keras.layers.Conv2D(filters=28, kernel_size=5, padding='same', activation='relu'),
-	tf.keras.layers.BatchNormalization(),
-	
-	tf.keras.layers.MaxPooling2D(2,2),
-	tf.keras.layers.Dropout(0.4),
-	
-	tf.keras.layers.Conv2D(filters=28, kernel_size=5, padding='same', activation='relu'),
-	tf.keras.layers.BatchNormalization(),
-	
-	tf.keras.layers.MaxPooling2D(2,2),
-	tf.keras.layers.Dropout(0.4),
-	
-	tf.keras.layers.Flatten(),
-	
-	tf.keras.layers.Dense(54, kernel_regularizer = tf.keras.regularizers.l2(0.07), activation = 'sigmoid'),
-	tf.keras.layers.BatchNormalization(),
-	
-	tf.keras.layers.Dropout(0.4),
-	tf.keras.layers.GaussianNoise(0.75),
-	
-	tf.keras.layers.Dense(10, activation='softmax')
-\end{lstlisting}
+%\begin{lstlisting} [language=Python, caption=Python-Code, label=wandb]
+%	tf.keras.layers.InputLayer(input_shape=(28,28,1)),
+%	tf.keras.layers.Conv2D(filters=28, kernel_size=5, padding='same', activation='relu'),
+%	tf.keras.layers.BatchNormalization(),
+%	
+%	tf.keras.layers.MaxPooling2D(2,2),
+%	tf.keras.layers.Dropout(0.4),
+%	
+%	tf.keras.layers.Conv2D(filters=28, kernel_size=5, padding='same', activation='relu'),
+%	tf.keras.layers.BatchNormalization(),
+%	
+%	tf.keras.layers.MaxPooling2D(2,2),
+%	tf.keras.layers.Dropout(0.4),
+%	
+%	tf.keras.layers.Flatten(),
+%	
+%	tf.keras.layers.Dense(54, kernel_regularizer = tf.keras.regularizers.l2(0.07), activation = 'sigmoid'),
+%	tf.keras.layers.BatchNormalization(),
+%	
+%	tf.keras.layers.Dropout(0.4),
+%	tf.keras.layers.GaussianNoise(0.75),
+%	
+%	tf.keras.layers.Dense(10, activation='softmax')
+%\end{lstlisting}
 
 \subsection{Callbacks - Early Stopping und Variable Learning Rate}
 
-Hinsichtlich des angestrebten Benchmarks sollte die Genauigkeit noch weiter gesteigert werden. Dafür wird der Trainingsprozess mit Callbacks angereichert.\\
-Zum einen wird EarlyStopping eingesetzt, um den automatisierten Trainingsprozess zu verkürzen und wenig erfolgreiche Druchläufe abzubrechen. Gleichzeitig werden die besten Ergebnisse gespeichert. 
+Nach der Optimierung der Hyperparameter des Netzes, wird der Trainingsprozess verbessert, indem er mit Callbacks angereichert wird. Zum einen wird EarlyStopping eingesetzt, um den automatisierten Trainingsprozess zu verkürzen und wenig erfolgreiche Druchläufe hinsichtlich der val\_accuracy abzubrechen. Gleichzeitig werden die besten Ergebnisse gespeichert. Um darüber hinaus schneller den Grenzwert zu erreichen wird eine Variable Learning Rate verwendet. In Kombination mit dem EarlyStopping zeigte eine gleichmäßige Reduktion mit jeder Epoche bessere Ergebnisse, als die Methode ReduceLROnPlateau. In Kombination mit einer Batch Size von 32 ergaben sich die besten Ergebnisse
 
-\begin{lstlisting}[language=Python, caption=Early Stopping, label=er]
-	er = tf.keras.callbacks.EarlyStopping(
-		 monitor="val_accuracy",
-		 patience=10,
-	     restore_best_weights=True
+\begin{lstlisting}[language=Python, caption=Callbacks, label=callback]
+	er = EarlyStopping(
+		monitor="val_accuracy",
+		patience=10,
+	    restore_best_weights=True
 	)
-\end{lstlisting}
-
-Um darüber hinaus schneller den Grenzwert zu erreichen wird eine Variable Learning Rate verwendet. In Kombination mit dem EarlyStopping zeigte eine gleichmäßige Reduktion mit jeder Epoche besser Ergebnisse, als die Methode ReduceLROnPlateau. In Kombination mit einer Batch Size von 32 ergaben sich die besten Ergebnisse
-
-\begin{lstlisting}[language=Python, caption=Variable Learning-Rate, label=vlr]
-	vlr = tf.keras.callbacks.LearningRateScheduler(lambda x: 1e-3 * 0.995 ** x)
+	vlr = LearningRateScheduler(lambda x: 1e-3 * 0.995 ** x)
 \end{lstlisting}
 
 \subsection{Data Augmentation}
 
-Des Weiteren wird die Anzahl an Trainingsdaten mit einer Augmentation erweitert. Dazu kommt der ImageDataGenerator von Keras zum Einsatz. Für Rotation und Zoom werden 0,15 verwendet. Für Shear und Shift 0,1. Die Bilder werden nicht gespiegelt, weil die Zahlen nicht entsprechend symmetrisch sind. Die gewählten Werte haben sich in Weight \& Biases Sweeps als geeignet herausgestellt
+Des Weiteren wird die Anzahl an Trainingsdaten mit einer Augmentation erweitert. Dazu kommt der ImageDataGenerator von Keras zum Einsatz. Für Rotation und Zoom werden 0,15 verwendet. Für Shear und Shift 0,1. Die Bilder werden nicht gespiegelt, weil die Zahlen nicht entsprechend symmetrisch sind. Die gewählten Werte haben sich bei Weight\&Biases Sweeps als geeignet herausgestellt.
 
 \begin{lstlisting}[language=Python, caption=Data Augmentation, label=da]
 	
@@ -279,94 +261,23 @@ Des Weiteren wird die Anzahl an Trainingsdaten mit einer Augmentation erweitert.
 
 \subsection{Netzanpassung}
 
-Nachdem die vorausgegangen Methoden wieder stagnierten. Erfolgte eine Anpassung des Netzes.
-
-Zum einen werden zwei aufeinanderfolgende Convolutional Layers mit einer Filtergröße von 3x3 verwendest, anstelle eines mit 5x5. Dadurch ist das Netzwerk in der Lage sein, komplexere und nichtlineare Muster zu erlernen. https://doi.org/10.48550/arXiv.2202.01653 
-
-
-Strided Convolution für Downsampling: Bei Verwendung einer Convolutional Layer mit Strides von 2 werden die Ausgabefeature-Maps aufgrund des größeren Schrittweitenwerts um den Faktor 2 in jeder Dimension reduziert.
-Trainierbare Downsampling-Operation: Im Gegensatz zur Max-Pooling-Schicht, die eine festgelegte Operation (Maximum aus einem Fenster) ohne trainierbare Parameter ist, ermöglicht die Verwendung einer Convolutional Layer mit Strides von 2 das Lernen von Downsampling-Operationen. Die Gewichte in der Convolutional Layer werden während des Trainings angepasst, um die beste Darstellung der Daten zu finden, während gleichzeitig eine Reduzierung der räumlichen Dimensionen erfolgt.
-
-die filter anzah lim 2. conv wurde wie angekündigt erhöhrt auf 56
-
-
-Zusätzlich wurde auch noch ein Dense layer hinzugefügt mit 82 neuronen (also 28 mehr als das 54 neuronen netzt, für das symmetriebedürfnis)
-
-und nach jedem dropout ein gaussian noise gegen overfitting eingefügt
-
-
-\section{Zusammenfassunge}
+Nach den vorausgegangenen Methoden die Genauigkeit zu optimieren, folgt nun abschließend noch eine Anpassung des Netzes. Zum einen werden anstelle eines Convolutional-Layers mit einer Filtergröße von 3 nun zwei aufeinanderfolgende mit Größe 3 verwendest. Dadurch ist das Netzwerk in der Lage sein, komplexere und nichtlineare Muster zu erlernen. \textcolor{red}{https://doi.org/10.48550/arXiv.2202.01653} Des Weiteren wird anstatt MaxPooling Strided Convolution für das Downsampling verwendet. Dadurch ergibt sich die gleiche Reduktion der Dimensionen, aber weitere trainierbare Parameter. Wie zuvor bereits angedeutet, wurde zudem die Filtergröße des 2. Convolution-Blocks 56 erhöht. Bei mehreren Versuchen wurden hiermit bessere Ergebnisse als mit 28 erreicht.\\
+Zusätzlich wurde außerdem noch ein Dense-Layer mit 82 Neuronen ergänzt(sprich 28 mehr als das folgende Layer). Für einen besseren Schutz gegen Overfitting wurde außerdem nach jedem Dropout ein GaussianNoise eingefügt.\\
+Das dadurch entstandene Netz ist dem \textcolor{red}{Jupyterdateiname} zu entnehmen
 
 Mit diesen Änderungen wurde bei 50 Netzen...
 maximal 99.77 und damit der benchmark
 
-
-\section{Sonstige Versuche}
-
-Neben dieser ausführlich dokumentierten Optimierung hinsichtlich des Accuracy-Benchmarks wurden an den folgenden Punkte ausprobiert.. 
-
 \subsection{Reduktion der Label}
 
+Um die Label zu Reduzieren wurde für jede Zahl das Label im Trainingsdatensatz ausgewählt, dass die höchste Kosinus-Ähnlichkeit zu den anderen besitzt. Der Code für diese Auswahl ist in \textcolor{red}{cosinussquere.jupyterdatei}.
 
-\begin{lstlisting}[language=Python, caption=Python-Code, label=python_code]
-	from scipy.spatial import distance
-	
-	x_train_best = []  # Array für die ähnlichsten Bilder
-	y_train_best = []  # Array für die zugehörigen Labels
-	similar_indices = [47647]  # Array für die Indizes der ähnlichsten Bilder
-	
-	# Berechnung der ähnlichsten Ziffern für jede Klasse von 0 bis 9
-	for digit in range(10):
-	
-	print('Digit:', digit)
-	# Filtern der Ziffern nach ihrer Klasse
-	class_images = x_train[y_train == digit]
-	
-	# Berechnung der durchschnittlichen Cosinus-Ähnlichkeit für jede Ziffer zu anderen Ziffern derselben Klasse
-	similarities = []
-	for i, image in enumerate(class_images):
-	avg_similarity = 0
-	for other_image in class_images:
-	if not np.array_equal(image, other_image):
-	# Umwandlung von 28x28 Bildern in Vektoren für Cosinus-Ähnlichkeit
-	image_vector = image.flatten()
-	other_image_vector = other_image.flatten()
-	# Berechnung der Cosinus-Ähnlichkeit
-	cosine_similarity = 1 - distance.cosine(image_vector, other_image_vector)
-	avg_similarity += cosine_similarity
-	avg_similarity /= len(class_images) - 1  # Durchschnittliche Ähnlichkeit zu allen anderen Ziffern der Klasse außer sich selbst
-	similarities.append((i, avg_similarity))
-	
-	# Sortieren nach der durchschnittlichen Ähnlichkeit und Auswahl der ähnlichsten Ziffer
-	similarities.sort(key=lambda x: x[1], reverse=True)
-	most_similar_index = similarities[0][0]
-	
-	most_similar_index_train_images = np.where((y_train == digit))[0][most_similar_index]
-	most_similar_digit = x_train[most_similar_index_train_images]
-	
-	print('Index:', most_similar_index_train_images)
-	
-	# Hinzufügen des ähnlichsten Bildes, seines Labels und seines Index im train_images Array in den Arrays
-	x_train_best.append(most_similar_digit)
-	y_train_best.append(digit)
-	similar_indices.append(most_similar_index_train_images)
-	
-	# Umwandeln der Listen in numpy arrays
-	x_train_best = np.array(x_train_best)
-	y_train_best = np.array(y_train_best)
-	similar_indices = np.array(similar_indices)
-\end{lstlisting}
-
-\subsection{NLP - Tiny Schiller}
+\section{Tiny Schiller}
 
 tiny schiller referenz
-
 Gandalf in Moria: „Im Zweifelsfall sollte man immer seiner Nase folgen …“
 
-
-
-
-Abschließend ein Zitat des \emph{drunkenSchiller} Models
+Motiviert durch die Vorlesung zu den Large Language Model wurde neben den Versuchen an MNIST mit dem TinySchiller-Datensatz \glqq gespielt\grqq. Ausgehend von dem Code \textcolor{red}{https://www.askpython.com/python/examples/predict-shakespearean-text}. Wurde mit gru und lstm andere Layertypenversucht. Liebevoll trägt das Modell den Namen \emph{drunkenSchiller} und ihm steht die Ehre zu einen abschließenden Satz über DeepLearning zu teilen:
 
 
 \end{document}

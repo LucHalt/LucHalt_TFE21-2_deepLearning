@@ -1,0 +1,19 @@
+import numpy as np
+from tensorflow.keras.datasets import mnist
+
+# Laden der MNIST Daten
+(train_images, _), (_, _) = mnist.load_data()
+
+# Berechnung des Schwerpunkts für ein Bild
+def calculate_center_of_mass(image):
+    rows, cols = image.shape
+    total_mass = np.sum(image)
+    row_indices, col_indices = np.indices(image.shape)
+    row_mass = np.sum(row_indices * image) / total_mass
+    col_mass = np.sum(col_indices * image) / total_mass
+    return row_mass, col_mass
+
+# Beispiel: Berechnung des Schwerpunkts für das erste Bild in den Trainingsdaten
+image = train_images[0]
+center_of_mass = calculate_center_of_mass(image)
+print("Schwerpunkt des Bildes:", center_of_mass)

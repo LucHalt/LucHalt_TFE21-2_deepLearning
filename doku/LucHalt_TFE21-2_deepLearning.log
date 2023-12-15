@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.11)  15 DEC 2023 14:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.11)  15 DEC 2023 17:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1253,24 +1253,24 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (LucHalt_TFE21-2_deepLearning.aux)
 \openout1 = `LucHalt_TFE21-2_deepLearning.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
 
 (C:\Program Files\MiKTeX\tex/latex/translations/dicts\translations-basic-dictio
 nary-german.trsl
@@ -1278,7 +1278,7 @@ File: translations-basic-dictionary-german.trsl (german translation file `trans
 lations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `german'. on input line 143.
+or `german'. on input line 144.
  (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count475
@@ -1302,7 +1302,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: Option `justification=RaggedRight' requires the `ragged2e
-' package on input line 143.
+' package on input line 144.
 
 (C:\Program Files\MiKTeX\tex/latex/ragged2e\ragged2e.sty
 Package: ragged2e 2023/06/22 v3.6 ragged2e Package
@@ -1350,8 +1350,8 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'LucHalt_TFE21-2_deepLearning.bbl' not found.
 
 No file LucHalt_TFE21-2_deepLearning.bbl.
-Package biblatex Info: Reference section=0 on input line 143.
-Package biblatex Info: Reference segment=0 on input line 143.
+Package biblatex Info: Reference section=0 on input line 144.
+Package biblatex Info: Reference segment=0 on input line 144.
 (C:\Program Files\MiKTeX\tex/latex/pdflscape\pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
 
@@ -1373,7 +1373,7 @@ Package scrhack Info: \landscape patched to make \textheight change optional on
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-Package hyperref Info: Link coloring OFF on input line 143.
+Package hyperref Info: Link coloring OFF on input line 144.
 
 (LucHalt_TFE21-2_deepLearning.out) (LucHalt_TFE21-2_deepLearning.out)
 \@outlinefile=\write5
@@ -1386,7 +1386,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 143.
+(scrartcl)           before \begin{document} on input line 144.
 
 (C:\Program Files\MiKTeX\tex/latex/bookmark\bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
@@ -1396,63 +1396,57 @@ File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
 \BKM@id=\count481
 ))
 \c@lstlisting=\count482
-Package scrhack Info: undefining \float@addtolists on input line 143.
+Package scrhack Info: undefining \float@addtolists on input line 144.
 
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-Package scrbase Info: activating ngerman \contentsname on input line 143.
-Package scrbase Info: activating ngerman \bibname on input line 143.
+Package scrbase Info: activating ngerman \contentsname on input line 144.
+Package scrbase Info: activating ngerman \bibname on input line 144.
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1
-46.
+47.
 (C:\Program Files\MiKTeX\tex/latex/base\t1cmss.fd
 File: t1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 ) [1
 
 {C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Program Fi
-les/MiKTeX/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2]
+les/MiKTeX/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
+
+LaTeX Warning: Reference `sec:wandb' on page 2 undefined on input line 151.
+
 (C:\Program Files\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 169.
-
-Underfull \vbox (badness 3428) has occurred while \output is active []
-
- [3]
-<images/Filter.png, id=42, 3171.85pt x 1666.225pt>
+nput line 161.
+ [2]
+<images/Filter.png, id=38, 3171.85pt x 1666.225pt>
 File: images/Filter.png Graphic file (type png)
 <use images/Filter.png>
-Package pdftex.def Info: images/Filter.png  used on input line 191.
+Package pdftex.def Info: images/Filter.png  used on input line 180.
 (pdftex.def)             Requested size: 304.72772pt x 160.07274pt.
-
-[4 <./images/Filter.png>]
-<images/Activ.png, id=56, 3171.85pt x 1666.225pt>
+ [3 <./images/Filter.png>]
+<images/Activ.png, id=53, 3171.85pt x 1666.225pt>
 File: images/Activ.png Graphic file (type png)
 <use images/Activ.png>
-Package pdftex.def Info: images/Activ.png  used on input line 206.
+Package pdftex.def Info: images/Activ.png  used on input line 195.
 (pdftex.def)             Requested size: 304.72772pt x 160.07274pt.
- [5 <./images/Activ.png>] [6]
-Overfull \hbox (67.71173pt too wide) in paragraph at lines 284--285
-\T1/cmr/m/n/12 sein, kom-ple-xe-re und nicht-li-nea-re Mus-ter zu er-ler-nen. h
-tt-ps://doi.org/10.48550/arXiv.2202.01653 
+ [4 <./images/Activ.png>]
+Overfull \hbox (24.24615pt too wide) in paragraph at lines 264--267
+\T1/cmr/m/n/12 schlie-ÿend noch ei-ne An-pas-sung des Net-zes. Zum einen wer-de
+n an-stel-le ei-nes Convolutional-
  []
 
-[7{C:/Program Files/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (34.71062pt too wide) in paragraph at lines 306--307
-\T1/cmr/m/n/12 Neben die-ser aus-führ-lich do-ku-men-tier-ten Op-ti-mie-rung hi
-n-sicht-lich des Accuracy-Benchmarks
- []
-
-[8]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9]
-[10] (LucHalt_TFE21-2_deepLearning.aux)
+[5{C:/Program Files/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [6]
+(LucHalt_TFE21-2_deepLearning.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `LucHalt_TFE21-2_deepLearning.out' has not ch
 anged.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -1462,13 +1456,13 @@ Package logreq Info: Writing requests to 'LucHalt_TFE21-2_deepLearning.run.xml'
 
  ) 
 Here is how much of TeX's memory you used:
- 51137 strings out of 474549
- 1186142 string characters out of 5754147
- 2431146 words of memory out of 5000000
- 72511 multiletter control sequences out of 15000+600000
+ 50980 strings out of 474549
+ 1183943 string characters out of 5754147
+ 2274099 words of memory out of 5000000
+ 72430 multiletter control sequences out of 15000+600000
  569047 words of font info for 56 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 108i,8n,107p,10925b,2527s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,8n,107p,10925b,2646s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Program
  Files/MiKTeX/fonts/type1/public/cm-super/sfrm0600.pfb><C:/Program Files/MiKTeX
 /fonts/type1/public/cm-super/sfrm1000.pfb><C:/Program Files/MiKTeX/fonts/type1/
@@ -1477,9 +1471,9 @@ er/sfrm1728.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfsx1440.p
 fb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfsx1728.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/cm-super/sfsx2488.pfb><C:/Program Files/MiKTe
 X/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on LucHalt_TFE21-2_deepLearning.pdf (10 pages, 1568199 bytes).
+Output written on LucHalt_TFE21-2_deepLearning.pdf (6 pages, 1549169 bytes).
 PDF statistics:
- 299 PDF objects out of 1000 (max. 8388607)
- 129 named destinations out of 1000 (max. 500000)
- 135 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 187 PDF objects out of 1000 (max. 8388607)
+ 53 named destinations out of 1000 (max. 500000)
+ 119 words of extra memory for PDF output out of 10000 (max. 10000000)
 
