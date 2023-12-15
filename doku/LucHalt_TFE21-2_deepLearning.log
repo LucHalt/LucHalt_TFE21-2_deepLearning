@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.11)  15 DEC 2023 13:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.11)  15 DEC 2023 14:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1432,120 +1432,27 @@ File: images/Activ.png Graphic file (type png)
 <use images/Activ.png>
 Package pdftex.def Info: images/Activ.png  used on input line 206.
 (pdftex.def)             Requested size: 304.72772pt x 160.07274pt.
-
-
-! Package xcolor Error: Undefined color `{red}{papers (dropout gege noverfittin
-g)}'.
-
-See the xcolor package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.214 ...ed}{papers (dropout gege noverfitting)}}.
-                                                   Daraus ergibt sich das in...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `wandb' on page 5 undefined on input line 214.
-
-[5 <./images/Activ.png>]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.250 monitor="val_
-                   accuracy",
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.254 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (69.91954pt too wide) in paragraph at lines 249--254
-[]\T1/cmr/m/n/12 er = tf.keras.callbacks.EarlyStopping( monitor="val$[]\OML/cmm
-/m/it/12 ccuracy\OT1/cmr/m/n/12 "\OML/cmm/m/it/12 ; patience \OT1/cmr/m/n/12 = 
-15\OML/cmm/m/it/12 ; restore[]est[]eights \OT1/cmr/m/n/12 =
+ [5 <./images/Activ.png>] [6]
+Overfull \hbox (67.71173pt too wide) in paragraph at lines 284--285
+\T1/cmr/m/n/12 sein, kom-ple-xe-re und nicht-li-nea-re Mus-ter zu er-ler-nen. h
+tt-ps://doi.org/10.48550/arXiv.2202.01653 
  []
 
-[6]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.265 monitor="val_
-                   accuracy",
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.269 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (69.91954pt too wide) in paragraph at lines 264--269
-[]\T1/cmr/m/n/12 er = tf.keras.callbacks.EarlyStopping( monitor="val$[]\OML/cmm
-/m/it/12 ccuracy\OT1/cmr/m/n/12 "\OML/cmm/m/it/12 ; patience \OT1/cmr/m/n/12 = 
-15\OML/cmm/m/it/12 ; restore[]est[]eights \OT1/cmr/m/n/12 =
+[7{C:/Program Files/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+Overfull \hbox (34.71062pt too wide) in paragraph at lines 306--307
+\T1/cmr/m/n/12 Neben die-ser aus-führ-lich do-ku-men-tier-ten Op-ti-mie-rung hi
+n-sicht-lich des Accuracy-Benchmarks
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.271 rotation_
-               range=15,
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.281 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (53.45961pt too wide) in paragraph at lines 270--281
-[]\T1/cmr/m/n/12 datagen = tf.keras.preprocessing.image.ImageDataGenerator( rot
-ation$[]\OML/cmm/m/it/12 ange \OT1/cmr/m/n/12 = 15\OML/cmm/m/it/12 ; zoom[]ange
- \OT1/cmr/m/n/12 =
- []
-
-
-Overfull \hbox (34.03857pt too wide) in paragraph at lines 270--281
-\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; fill[]ode \OT1/cmr/m/n/12 =[] \OML/cmm/m/it
-/12 nearest[]; horizontal[]lip \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 False; vertic
-al[]lip \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 False\OT1/cmr/m/n/12 )\OML/cmm/m/it/
-12 datagen:fit\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]rain\OT1/cmr/m/n/12 )$ 
- []
-
-[7{C:/Program Files/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [8]
-[9]
+[8]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10]
-[11] (LucHalt_TFE21-2_deepLearning.aux)
+ [9]
+[10] (LucHalt_TFE21-2_deepLearning.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `LucHalt_TFE21-2_deepLearning.out' has not ch
 anged.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -1555,28 +1462,24 @@ Package logreq Info: Writing requests to 'LucHalt_TFE21-2_deepLearning.run.xml'
 
  ) 
 Here is how much of TeX's memory you used:
- 51143 strings out of 474549
- 1186332 string characters out of 5754147
- 2469026 words of memory out of 5000000
- 72516 multiletter control sequences out of 15000+600000
- 571320 words of font info for 64 fonts, out of 8000000 for 9000
+ 51137 strings out of 474549
+ 1186142 string characters out of 5754147
+ 2431146 words of memory out of 5000000
+ 72511 multiletter control sequences out of 15000+600000
+ 569047 words of font info for 56 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 108i,8n,107p,10925b,2525s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Progra
-m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-su
-per/sfbx1200.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfrm0600.
-pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Progr
-am Files/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Program Files/MiKT
-eX/fonts/type1/public/cm-super/sfrm1728.pfb><C:/Program Files/MiKTeX/fonts/type
-1/public/cm-super/sfsx1200.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-s
-uper/sfsx1440.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfsx1728
-.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfsx2488.pfb><C:/Prog
-ram Files/MiKTeX/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on LucHalt_TFE21-2_deepLearning.pdf (11 pages, 1620240 bytes).
+ 108i,8n,107p,10925b,2527s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Program
+ Files/MiKTeX/fonts/type1/public/cm-super/sfrm0600.pfb><C:/Program Files/MiKTeX
+/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Program Files/MiKTeX/fonts/type1/
+public/cm-super/sfrm1200.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-sup
+er/sfrm1728.pfb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfsx1440.p
+fb><C:/Program Files/MiKTeX/fonts/type1/public/cm-super/sfsx1728.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/cm-super/sfsx2488.pfb><C:/Program Files/MiKTe
+X/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on LucHalt_TFE21-2_deepLearning.pdf (10 pages, 1568199 bytes).
 PDF statistics:
- 336 PDF objects out of 1000 (max. 8388607)
- 122 named destinations out of 1000 (max. 500000)
- 183 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 299 PDF objects out of 1000 (max. 8388607)
+ 129 named destinations out of 1000 (max. 500000)
+ 135 words of extra memory for PDF output out of 10000 (max. 10000000)
 
