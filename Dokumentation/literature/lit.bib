@@ -1,0 +1,81 @@
+ 
+@Misc{wandb.sweep,
+  title    = {Tune {Hyperparameters} {\textbar} {Weights} \& {Biases} {Documentation}},
+  abstract = {Hyperparameter search and model optimization with W\&B Sweeps},
+  language = {en},
+  url      = {https://docs.wandb.ai/guides/sweeps},
+  urldate  = {2023-12-26},
+}
+
+ 
+@TechReport{Cai.2020,
+  author   = {Cai, Shaofeng and Shu, Yao and Chen, Gang and Ooi, Beng Chin and Wang, Wei and Zhang, Meihui},
+  title    = {Effective and {Efficient} {Dropout} for {Deep} {Convolutional} {Neural} {Networks}},
+  year     = {2020},
+  month    = jul,
+  note     = {arXiv:1904.03392 [cs] type: article},
+  abstract = {Convolutional Neural networks (CNNs) based applications have become ubiquitous, where proper regularization is greatly needed. To prevent large neural network models from overfitting, dropout has been widely used as an efficient regularization technique in practice. However, many recent works show that the standard dropout is ineffective or even detrimental to the training of CNNs. In this paper, we revisit this issue and examine various dropout variants in an attempt to improve existing dropout-based regularization techniques for CNNs. We attribute the failure of standard dropout to the conflict between the stochasticity of dropout and its following Batch Normalization (BN), and propose to reduce the conflict by placing dropout operations right before the convolutional operation instead of BN, or totally address this issue by replacing BN with Group Normalization (GN). We further introduce a structurally more suited dropout variant Drop-Conv2d, which provides more efficient and effective regularization for deep CNNs. These dropout variants can be readily integrated into the building blocks of CNNs and implemented in existing deep learning platforms. Extensive experiments on benchmark datasets including CIFAR, SVHN and ImageNet are conducted to compare the existing building blocks and the proposed ones with dropout training. Results show that our building blocks improve over state-of-the-art CNNs significantly, which is mainly due to the better regularization and implicit model ensemble effect.},
+  annote   = {Comment: 12 pages, 10 figures},
+  doi      = {10.48550/arXiv.1904.03392},
+  file     = {:Cai.2020 - Effective and Efficient Dropout for Deep Convolutional Neural Networks.pdf:PDF},
+  keywords = {Computer Science - Machine Learning, Computer Science - Computer Vision and Pattern Recognition},
+  school   = {arXiv},
+  url      = {http://arxiv.org/abs/1904.03392},
+  urldate  = {2023-12-26},
+}
+
+ 
+@TechReport{Li.2018,
+  author   = {Li, Xiang and Chen, Shuo and Hu, Xiaolin and Yang, Jian},
+  title    = {Understanding the {Disharmony} between {Dropout} and {Batch} {Normalization} by {Variance} {Shift}},
+  year     = {2018},
+  month    = jan,
+  note     = {arXiv:1801.05134 [cs, stat] type: article},
+  abstract = {This paper first answers the question "why do the two most powerful techniques Dropout and Batch Normalization (BN) often lead to a worse performance when they are combined together?" in both theoretical and statistical aspects. Theoretically, we find that Dropout would shift the variance of a specific neural unit when we transfer the state of that network from train to test. However, BN would maintain its statistical variance, which is accumulated from the entire learning procedure, in the test phase. The inconsistency of that variance (we name this scheme as "variance shift") causes the unstable numerical behavior in inference that leads to more erroneous predictions finally, when applying Dropout before BN. Thorough experiments on DenseNet, ResNet, ResNeXt and Wide ResNet confirm our findings. According to the uncovered mechanism, we next explore several strategies that modifies Dropout and try to overcome the limitations of their combination by avoiding the variance shift risks.},
+  annote   = {Comment: 9 pages, 7 figures},
+  doi      = {10.48550/arXiv.1801.05134},
+  file     = {:li_understanding_2018 - Understanding the Disharmony between Dropout and Batch Normalization by Variance Shift.pdf:PDF},
+  keywords = {Computer Science - Machine Learning, Statistics - Machine Learning},
+  school   = {arXiv},
+  url      = {http://arxiv.org/abs/1801.05134},
+  urldate  = {2023-12-26},
+}
+
+ 
+@TechReport{Riad.2022,
+  author   = {Riad, Rachid and Teboul, Olivier and Grangier, David and Zeghidour, Neil},
+  title    = {Learning strides in convolutional neural networks},
+  year     = {2022},
+  month    = feb,
+  note     = {arXiv:2202.01653 [cs] type: article},
+  abstract = {Convolutional neural networks typically contain several downsampling operators, such as strided convolutions or pooling layers, that progressively reduce the resolution of intermediate representations. This provides some shift-invariance while reducing the computational complexity of the whole architecture. A critical hyperparameter of such layers is their stride: the integer factor of downsampling. As strides are not differentiable, finding the best configuration either requires cross-validation or discrete optimization (e.g. architecture search), which rapidly become prohibitive as the search space grows exponentially with the number of downsampling layers. Hence, exploring this search space by gradient descent would allow finding better configurations at a lower computational cost. This work introduces DiffStride, the first downsampling layer with learnable strides. Our layer learns the size of a cropping mask in the Fourier domain, that effectively performs resizing in a differentiable way. Experiments on audio and image classification show the generality and effectiveness of our solution: we use DiffStride as a drop-in replacement to standard downsampling layers and outperform them. In particular, we show that introducing our layer into a ResNet-18 architecture allows keeping consistent high performance on CIFAR10, CIFAR100 and ImageNet even when training starts from poor random stride configurations. Moreover, formulating strides as learnable variables allows us to introduce a regularization term that controls the computational complexity of the architecture. We show how this regularization allows trading off accuracy for efficiency on ImageNet.},
+  annote   = {Comment: Spotlight at ICLR2022, open-source code available at https://github.com/google-research/diffstride},
+  doi      = {10.48550/arXiv.2202.01653},
+  file     = {:Riad.2022 - Learning Strides in Convolutional Neural Networks.pdf:PDF},
+  keywords = {Computer Science - Machine Learning},
+  school   = {arXiv},
+  url      = {http://arxiv.org/abs/2202.01653},
+  urldate  = {2023-12-26},
+}
+
+@Misc{schutera.2023,
+  author       = {Schutera, Mark},
+  howpublished = {\url{https://github.com/schutera/tiny_schiller/blob/main/tiny_schiller.txt}},
+  title        = {tiny_schiller},
+  year         = {2023},
+}
+
+ 
+@Misc{Bansal.2021,
+  author   = {Bansal, Isha},
+  month    = nov,
+  title    = {Predict {Shakespearean} {Text} {Using} {Keras} {TensorFlow} - {AskPython}},
+  year     = {2021},
+  abstract = {Hey folks! In this tutorial, we will look at how to use the Keras TensorFlow API in Python to create a Recurrent Neural Network model to predict Shakespearean},
+  chapter  = {Python Programming Examples},
+  language = {en-US},
+  url      = {https://www.askpython.com/python/examples/predict-shakespearean-text},
+  urldate  = {2023-12-26},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

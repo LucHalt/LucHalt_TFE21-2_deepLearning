@@ -1,0 +1,18 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'LucHalt_TFE21-2_deepLearning.blg'
+[139] biber-MSWIN64:340> INFO - === 
+[208] Biber.pm:419> INFO - Reading 'LucHalt_TFE21-2_deepLearning.bcf'
+[354] Biber.pm:979> INFO - Found 5 citekeys in bib section 0
+[374] Biber.pm:4419> INFO - Processing section 0
+[402] Biber.pm:4610> INFO - Looking for bibtex file 'lit.bib' for section 0
+[472] bibtex.pm:1713> INFO - LaTeX decoding ...
+[483] bibtex.pm:1519> INFO - Found BibTeX data source 'lit.bib'
+[535] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[535] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[535] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
+[535] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
+[544] bbl.pm:660> INFO - Writing 'LucHalt_TFE21-2_deepLearning.bbl' with encoding 'UTF-8'
+[549] bbl.pm:763> INFO - Output to LucHalt_TFE21-2_deepLearning.bbl
+[549] Biber.pm:131> WARN - Possible typo (case mismatch) between citation and datasource keys: 'Schutera.2023' and 'schutera.2023' in file 'lit.bib'
+[549] Biber.pm:131> WARN - I didn't find a database entry for 'Schutera.2023' (section 0)
+[550] Biber.pm:133> INFO - WARNINGS: 2

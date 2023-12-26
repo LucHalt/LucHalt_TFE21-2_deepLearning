@@ -1,0 +1,239 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{Cai.2020}{report}{}
+      \name{author}{6}{}{%
+        {{hash=db9d5d786447aee2daef3ee8b95f34e2}{%
+           family={Cai},
+           familyi={C\bibinitperiod},
+           given={Shaofeng},
+           giveni={S\bibinitperiod}}}%
+        {{hash=00395f0475b832df17d472061d55e736}{%
+           family={Shu},
+           familyi={S\bibinitperiod},
+           given={Yao},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=293c31f46eb012efc4b2449215c92484}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Gang},
+           giveni={G\bibinitperiod}}}%
+        {{hash=254b237a205abcace9dd23aea9c24773}{%
+           family={Ooi},
+           familyi={O\bibinitperiod},
+           given={Beng\bibnamedelima Chin},
+           giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=f27ec46ccd272a021fd78bdac92dd490}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+        {{hash=d62c1688bb47e71fc38203994267153c}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Meihui},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{7040c62f97d99fa75a8ce415d432977d}
+      \strng{fullhash}{f10d741c1d54c96e9dc7c7de2e931042}
+      \strng{bibnamehash}{7040c62f97d99fa75a8ce415d432977d}
+      \strng{authorbibnamehash}{7040c62f97d99fa75a8ce415d432977d}
+      \strng{authornamehash}{7040c62f97d99fa75a8ce415d432977d}
+      \strng{authorfullhash}{f10d741c1d54c96e9dc7c7de2e931042}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Convolutional Neural networks (CNNs) based applications have become ubiquitous, where proper regularization is greatly needed. To prevent large neural network models from overfitting, dropout has been widely used as an efficient regularization technique in practice. However, many recent works show that the standard dropout is ineffective or even detrimental to the training of CNNs. In this paper, we revisit this issue and examine various dropout variants in an attempt to improve existing dropout-based regularization techniques for CNNs. We attribute the failure of standard dropout to the conflict between the stochasticity of dropout and its following Batch Normalization (BN), and propose to reduce the conflict by placing dropout operations right before the convolutional operation instead of BN, or totally address this issue by replacing BN with Group Normalization (GN). We further introduce a structurally more suited dropout variant Drop-Conv2d, which provides more efficient and effective regularization for deep CNNs. These dropout variants can be readily integrated into the building blocks of CNNs and implemented in existing deep learning platforms. Extensive experiments on benchmark datasets including CIFAR, SVHN and ImageNet are conducted to compare the existing building blocks and the proposed ones with dropout training. Results show that our building blocks improve over state-of-the-art CNNs significantly, which is mainly due to the better regularization and implicit model ensemble effect.}
+      \field{annotation}{Comment: 12 pages, 10 figures}
+      \field{month}{7}
+      \field{note}{arXiv:1904.03392 [cs] type: article}
+      \field{title}{Effective and {Efficient} {Dropout} for {Deep} {Convolutional} {Neural} {Networks}}
+      \field{type}{techreport}
+      \field{urlday}{26}
+      \field{urlmonth}{12}
+      \field{urlyear}{2023}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1904.03392
+      \endverb
+      \verb{file}
+      \verb :Cai.2020 - Effective and Efficient Dropout for Deep Convolutional Neural Networks.pdf:PDF
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1904.03392
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1904.03392
+      \endverb
+      \keyw{Computer Science - Machine Learning,Computer Science - Computer Vision and Pattern Recognition}
+    \endentry
+    \entry{Li.2018}{report}{}
+      \name{author}{4}{}{%
+        {{hash=09e1a64c667557dd7866bc4e66d193ce}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Xiang},
+           giveni={X\bibinitperiod}}}%
+        {{hash=cae35e2754ed78d063a20159ebcf4109}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Shuo},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4f0a16da447808fc8b84cec1c86d6f64}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Xiaolin},
+           giveni={X\bibinitperiod}}}%
+        {{hash=5a1cb92dc789e714fb5aaf67809119a6}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{8bc4e01cf2882911e23bb51036f0bf9e}
+      \strng{fullhash}{ab9514b88fb90e3573098ef9a0bd856c}
+      \strng{bibnamehash}{8bc4e01cf2882911e23bb51036f0bf9e}
+      \strng{authorbibnamehash}{8bc4e01cf2882911e23bb51036f0bf9e}
+      \strng{authornamehash}{8bc4e01cf2882911e23bb51036f0bf9e}
+      \strng{authorfullhash}{ab9514b88fb90e3573098ef9a0bd856c}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper first answers the question "why do the two most powerful techniques Dropout and Batch Normalization (BN) often lead to a worse performance when they are combined together?" in both theoretical and statistical aspects. Theoretically, we find that Dropout would shift the variance of a specific neural unit when we transfer the state of that network from train to test. However, BN would maintain its statistical variance, which is accumulated from the entire learning procedure, in the test phase. The inconsistency of that variance (we name this scheme as "variance shift") causes the unstable numerical behavior in inference that leads to more erroneous predictions finally, when applying Dropout before BN. Thorough experiments on DenseNet, ResNet, ResNeXt and Wide ResNet confirm our findings. According to the uncovered mechanism, we next explore several strategies that modifies Dropout and try to overcome the limitations of their combination by avoiding the variance shift risks.}
+      \field{annotation}{Comment: 9 pages, 7 figures}
+      \field{month}{1}
+      \field{note}{arXiv:1801.05134 [cs, stat] type: article}
+      \field{title}{Understanding the {Disharmony} between {Dropout} and {Batch} {Normalization} by {Variance} {Shift}}
+      \field{type}{techreport}
+      \field{urlday}{26}
+      \field{urlmonth}{12}
+      \field{urlyear}{2023}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1801.05134
+      \endverb
+      \verb{file}
+      \verb :li_understanding_2018 - Understanding the Disharmony between Dropout and Batch Normalization by Variance Shift.pdf:PDF
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1801.05134
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1801.05134
+      \endverb
+      \keyw{Computer Science - Machine Learning,Statistics - Machine Learning}
+    \endentry
+    \entry{Riad.2022}{report}{}
+      \name{author}{4}{}{%
+        {{hash=a7141a6dbe13e2ca296dc1376c559b68}{%
+           family={Riad},
+           familyi={R\bibinitperiod},
+           given={Rachid},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7b33444af396b31f38a47964b0f031d7}{%
+           family={Teboul},
+           familyi={T\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod}}}%
+        {{hash=83c82248603da0738e20a4913d94e597}{%
+           family={Grangier},
+           familyi={G\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=4629bd09db4dad50b97f8319d56bc169}{%
+           family={Zeghidour},
+           familyi={Z\bibinitperiod},
+           given={Neil},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{723c11b2c5a02ef47368813346ada68d}
+      \strng{fullhash}{2e40124f8a51c0d1a0d81d47942da986}
+      \strng{bibnamehash}{723c11b2c5a02ef47368813346ada68d}
+      \strng{authorbibnamehash}{723c11b2c5a02ef47368813346ada68d}
+      \strng{authornamehash}{723c11b2c5a02ef47368813346ada68d}
+      \strng{authorfullhash}{2e40124f8a51c0d1a0d81d47942da986}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Convolutional neural networks typically contain several downsampling operators, such as strided convolutions or pooling layers, that progressively reduce the resolution of intermediate representations. This provides some shift-invariance while reducing the computational complexity of the whole architecture. A critical hyperparameter of such layers is their stride: the integer factor of downsampling. As strides are not differentiable, finding the best configuration either requires cross-validation or discrete optimization (e.g. architecture search), which rapidly become prohibitive as the search space grows exponentially with the number of downsampling layers. Hence, exploring this search space by gradient descent would allow finding better configurations at a lower computational cost. This work introduces DiffStride, the first downsampling layer with learnable strides. Our layer learns the size of a cropping mask in the Fourier domain, that effectively performs resizing in a differentiable way. Experiments on audio and image classification show the generality and effectiveness of our solution: we use DiffStride as a drop-in replacement to standard downsampling layers and outperform them. In particular, we show that introducing our layer into a ResNet-18 architecture allows keeping consistent high performance on CIFAR10, CIFAR100 and ImageNet even when training starts from poor random stride configurations. Moreover, formulating strides as learnable variables allows us to introduce a regularization term that controls the computational complexity of the architecture. We show how this regularization allows trading off accuracy for efficiency on ImageNet.}
+      \field{annotation}{Comment: Spotlight at ICLR2022, open-source code available at https://github.com/google-research/diffstride}
+      \field{month}{2}
+      \field{note}{arXiv:2202.01653 [cs] type: article}
+      \field{title}{Learning strides in convolutional neural networks}
+      \field{type}{techreport}
+      \field{urlday}{26}
+      \field{urlmonth}{12}
+      \field{urlyear}{2023}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2202.01653
+      \endverb
+      \verb{file}
+      \verb :Riad.2022 - Learning Strides in Convolutional Neural Networks.pdf:PDF
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2202.01653
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2202.01653
+      \endverb
+      \keyw{Computer Science - Machine Learning}
+    \endentry
+    \entry{wandb.sweep}{misc}{}
+      \list{language}{1}{%
+        {en}%
+      }
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Hyperparameter search and model optimization with W\&B Sweeps}
+      \field{title}{Tune {Hyperparameters} {|} {Weights} \& {Biases} {Documentation}}
+      \field{urlday}{26}
+      \field{urlmonth}{12}
+      \field{urlyear}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.wandb.ai/guides/sweeps
+      \endverb
+      \verb{url}
+      \verb https://docs.wandb.ai/guides/sweeps
+      \endverb
+    \endentry
+  \enddatalist
+  \missing{Schutera.2023}
+\endrefsection
+\endinput
+
