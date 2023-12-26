@@ -10,9 +10,6 @@ Dieses Repository beinhaltet die Dokumentation, den Quellcode und alle mitgelten
 > [!NOTE]  
 > Bitte beachten Sie, dass die vollstÃ¤ndige Dokumentation der Experimente und deren Ergebnisse in den entsprechenden Abschnitten zu finden sind.
 
-> [!IMPORTANT]  
-> Crucial information necessary for users to succeed.
-
 > [!WARNING]  
 > Critical content demanding immediate user attention due to potential risks.
 
@@ -26,5 +23,8 @@ Das Hauptnotebook ist über diesen Binder zu erreichen:
 > [!TIP]
 > Durch das Einblenden des File-Browsers (Strg+Shift+F) ist auch der Zugriff auf die anderen Notebooks einfach möglich.
 
+
+> [!IMPORTANT]  
+> Vielen Dank für die Vorlesung!
 
 ![schönes Bild](schiller.jpg)
