@@ -1,4 +1,4 @@
-# Prüfungsleistung im "Digitale Bildverarbeitung und Mustererkennung"
+# Prüfungsleistung in "Digitale Bildverarbeitung und Mustererkennung"
 
 Dieses Repository beinhaltet die Dokumentation, den Quellcode und alle mitgeltenden Unterlagen.
 
