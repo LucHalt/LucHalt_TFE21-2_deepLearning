@@ -7,16 +7,11 @@ Dieses Repository beinhaltet die Dokumentation, den Quellcode und alle mitgelten
 - Name:     Tim Lucas Halt
 - MatrNr.:  6682645
 
-> [!NOTE]  
-> Bitte beachten Sie, dass die vollstÃ¤ndige Dokumentation der Experimente und deren Ergebnisse in den entsprechenden Abschnitten zu finden sind.
+> [!NOTE]
+> ?
 
-> [!WARNING]  
-> Critical content demanding immediate user attention due to potential risks.
-
-> [!CAUTION]
-> Negative potential consequences of an action.
-
-Das Hauptnotebook ist über diesen Binder zu erreichen:
+## Code
+Die Quellcode-Datein und Modell-Dateien sind in dem Ordner "Code" abgelegt. Das Hauptnotebook ist mit diesen Binder zu erreichen:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LucHalt/LucHalt_TFE21-2_deepLearning/main?labpath=Code%2Fpepsi.evaluation.ipynb)
 
