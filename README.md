@@ -24,7 +24,7 @@ Das Hauptnotebook ist über diesen Binder zu erreichen:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LucHalt/LucHalt_TFE21-2_deepLearning/main?labpath=Code%2Fpepsi.evaluation.ipynb)
 
 > [!TIP]
-> Durch das Einblenden der Ordnerstuktur ist auch der Zugriff auf die anderen Notebooks möglich.
+> Durch das Einblenden des File-Browsers (Strg+Shift+F) ist auch der Zugriff auf die anderen Notebooks einfach möglich.
 
 
 ![schönes Bild](schiller.jpg)
