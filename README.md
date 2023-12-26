@@ -22,4 +22,6 @@ Dieses Repository beinhaltet die Dokumentation, den Quellcode und alle mitgelten
 > [!CAUTION]
 > Negative potential consequences of an action.
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LucHalt/LucHalt_TFE21-2_deepLearning/main?labpath=Code%2Fpepsi.evaluation.ipynb)
+
 ![schönes Bild](schiller.jpg)
