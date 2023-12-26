@@ -15,7 +15,7 @@ Dieses Repository beinhaltet Untersuchungen anhand zweier DatensÃ¤tze - MNIST 
 Der erste Teil dieses Projekts umfasst Experimente mit dem MNIST-Datensatz. Das Hauptziel war die Maximierung der Genauigkeit. Der Prozess wurde in mehreren Schritten durchgefÃ¼hrt, beginnend mit der Verwendung eines Basisnetzes (\autoref{basis}), um den Accuracy-Benchmark festzulegen. 
 
 ### Automatisierte Experimente mit Weights & Biases
-Um die Untersuchungen am MNIST-Datensatz teilautomatisiert durchzufÃ¼hren, wurde Weights & Biases als Hauptwerkzeug verwendet. Dieses Tool ermÃ¶glicht automatische Sweeps fÃ¼r Hyperparameter-Optimierung (\href{https://docs.wandb.ai/guides/sweeps}{Link zu Weights & Biases Dokumentation}). Die Ergebnisse dieser Optimierung und die Details dazu sind in \autoref{sec:wandb} ausfÃ¼hrlich beschrieben.
+Um die Untersuchungen am MNIST-Datensatz teilautomatisiert durchzufÃ¼hren, wurde Weights & Biases als Hauptwerkzeug verwendet. Dieses Tool ermöglicht automatische Sweeps fÃ¼r Hyperparameter-Optimierung (\href{https://docs.wandb.ai/guides/sweeps}{Link zu Weights & Biases Dokumentation}). Die Ergebnisse dieser Optimierung und die Details dazu sind in \autoref{sec:wandb} ausfÃ¼hrlich beschrieben.
 
 ### Verbesserungen am Modell
 Das Training wurde weiter verbessert durch die Integration von Callbacks, die Implementierung von Data-Augmentation und Optimierungen in der Layer-Struktur.
@@ -27,9 +27,7 @@ Der zweite Teil dieses Projekts konzentriert sich auf Experimente mit dem TinySc
 Um die durchgefÃ¼hrten Experimente nachzuvollziehen oder weiterzuentwickeln, folgen Sie bitte den Anweisungen in den jeweiligen Abschnitten der README und den Verweisen auf das verwendete Tool Weights & Biases.
 
 ## Verwendete Ressourcen und Plattformen
-FÃ¼r die Berechnungen wurden GPU-Ressourcen von Kaggle und Colab genutzt, um eine effiziente AusfÃ¼hrung der Experimente zu gewÃ¤hrleisten.
->>>>>>> 4872b74482c975a970b8d7705178c5a08c262dd7
-
+Für die Berechnungen wurden GPU-Ressourcen von Kaggle und Colab genutzt, um eine effiziente Ausführung der Experimente zu gewÃ¤hrleisten.
 
 ! Bitte beachten Sie, dass die vollstÃ¤ndige Dokumentation der Experimente und deren Ergebnisse in den entsprechenden Abschnitten zu finden sind.
 
