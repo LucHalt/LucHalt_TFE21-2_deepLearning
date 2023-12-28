@@ -18,8 +18,6 @@ Die Quellcode-Datein und Modell-Dateien sind in dem Ordner "Code" abgelegt. Das 
 > Durch das Einblenden des File-Browsers (Strg+Shift+F) ist auch der Zugriff auf die anderen Notebooks einfach möglich.
 
 ## Notiz
-
-> [!IMPORTANT]  
-> Vielen Dank für die Vorlesung!
+Danke für die Vorlesung!
 
 ![schönes Bild](schiller.jpg)
