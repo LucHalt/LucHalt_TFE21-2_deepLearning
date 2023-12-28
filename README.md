@@ -8,8 +8,7 @@ Dieses Repository beinhaltet die Dokumentation, den Quellcode und alle mitgelten
 - MatrNr.:  6682645
 
 ## Binder
-Die Quellcode-Datein und Modell-Dateien sind in dem Ordner "Code" abgelegt. Das Hauptnotebook ist mit diesen Binder zu erreichen:
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LucHalt/LucHalt_TFE21-2_deepLearning/main?labpath=Code%2Fpepsi.evaluation.ipynb)
+Die Quellcode-Datein und Modell-Dateien sind in dem Ordner "Code" abgelegt. Das Hauptnotebook ist mit diesen Binder zu erreichen: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LucHalt/LucHalt_TFE21-2_deepLearning/main?labpath=Code%2Fpepsi.evaluation.ipynb)
 
 > [!TIP]
 > Durch das Einblenden des File-Browsers (Strg+Shift+F) ist auch der Zugriff auf die anderen Notebooks einfach möglich.
