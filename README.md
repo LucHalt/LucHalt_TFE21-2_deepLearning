@@ -9,6 +9,7 @@ Dieses Repository beinhaltet die Dokumentation, den Quellcode und alle mitgelten
 
 ## Binder
 Die Dateien mit Quellcode, sowie einzelne Modelle sind in dem Ordner "Code" abgelegt. Das "Haupt"-Jupyter-Notebook ist über Binder erreichbar:
+
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LucHalt/LucHalt_TFE21-2_deepLearning/main?labpath=Code%2Fpepsi.evaluation.ipynb)
 
 > [!TIP]
