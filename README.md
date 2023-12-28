@@ -12,7 +12,6 @@ Dieses Repository beinhaltet die Dokumentation, den Quellcode und alle mitgelten
 
 ## Code
 Die Quellcode-Datein und Modell-Dateien sind in dem Ordner "Code" abgelegt. Das Hauptnotebook ist mit diesen Binder zu erreichen:
-
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LucHalt/LucHalt_TFE21-2_deepLearning/main?labpath=Code%2Fpepsi.evaluation.ipynb)
 
 > [!TIP]
