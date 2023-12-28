@@ -19,6 +19,43 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{Bansal.2021}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=616c82e69429e86c835389cdfff99cc6}{%
+           family={Bansal},
+           familyi={B\bibinitperiod},
+           given={Isha},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en-US}%
+      }
+      \strng{namehash}{616c82e69429e86c835389cdfff99cc6}
+      \strng{fullhash}{616c82e69429e86c835389cdfff99cc6}
+      \strng{bibnamehash}{616c82e69429e86c835389cdfff99cc6}
+      \strng{authorbibnamehash}{616c82e69429e86c835389cdfff99cc6}
+      \strng{authornamehash}{616c82e69429e86c835389cdfff99cc6}
+      \strng{authorfullhash}{616c82e69429e86c835389cdfff99cc6}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Hey folks! In this tutorial, we will look at how to use the Keras TensorFlow API in Python to create a Recurrent Neural Network model to predict Shakespearean}
+      \field{chapter}{Python Programming Examples}
+      \field{month}{11}
+      \field{title}{Predict {Shakespearean} {Text} {Using} {Keras} {TensorFlow} - {AskPython}}
+      \field{urlday}{26}
+      \field{urlmonth}{12}
+      \field{urlyear}{2023}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.askpython.com/python/examples/predict-shakespearean-text
+      \endverb
+      \verb{url}
+      \verb https://www.askpython.com/python/examples/predict-shakespearean-text
+      \endverb
+    \endentry
     \entry{Cai.2020}{report}{}
       \name{author}{6}{}{%
         {{hash=db9d5d786447aee2daef3ee8b95f34e2}{%

@@ -15,5 +15,11 @@ Die Dateien mit Quellcode, sowie einzelne Modelle sind in dem Ordner "Code" abge
 > [!TIP]
 > Durch das Einblenden des File-Browsers (Strg+Shift+F) ist auch der Zugriff auf die anderen Notebooks einfach möglich.
 
+### �berblick
+
+pepsi: maximale Genauigkeit
+drunkenSchiller: TinySchiller
+minLabel: Aussortieren von Labeln
+
 ## Danke
 ...für die Vorlesung!

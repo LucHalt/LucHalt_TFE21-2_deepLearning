@@ -184,10 +184,10 @@ Das Ausgangsnetz, von dem die Betrachtungen ausgehen ist in \autoref{basis} darg
 \end{figure}
 
 Zunächst erfolgt die Untersuchung der Filter-Anzahlen in den Convolution-Layern und der Neuronen-Anzahl des ersten Dense-Layer. Das Output-Dense-Layer wird bei 10 Neuronen und der \emph{softmax}-Aktivierungsfunktion belassen, damit jeder Klasse eine Wahrscheinlichkeit zugeordnet wird.\\
-Als Methode ist in Weights\&Biases \emph{bayes}, die Bayes'sche Optimierung, zur Maximierung der val\_accuracy gewählt. Dabei werden die Hyperparameter aus einem vorgegebenen Raster gewählt, ein Training durchgeführt und die Ergebnisse dokumentiert. Das Raster für die Filter und Neuronen wurde so gewählt, dass (1) eine Abstufung im Convolution-Teil erfolgt, (2) auch Zahlen nicht zur Basis zwei getestet werden und (3) die Parameteranzahl nicht exorbitant groß wird. Das erste Kriterium erwies sich als kontraproduktiv und wird später noch verworfen.\\
-Die Ergebnisse von circa 100 Kombinationen sind in \autoref{fig:filter} dargestellt. Hervorgehoben sind die besten Zehn. Nach weiter eingegrenztem Sweeps sind in beiden Convolution-Layern 28 Filter gewählt und 54 Neuronen für das Dense-Layer.
+Als Methode ist in Weights\&Biases \emph{bayes}, die Bayes'sche Optimierung, zur Maximierung der val\_accuracy gewählt. Dabei werden die Hyperparameter aus einem vorgegebenen Raster gewählt, ein Training durchgeführt und die Ergebnisse dokumentiert. Das Raster für die Filter und Neuronen wurde so gewählt, dass (1) eine Abstufung im Convolution-Teil erfolgt, (2) auch Zahlen nicht zur Basis zwei getestet werden und (3) die Parameteranzahl nicht exorbitant groß wird. Das erste Kriterium erwies sich als kontraproduktiv und wird später verworfen.\\
+Die Ergebnisse von circa 100 Kombinationen sind in \autoref{fig:filter} dargestellt. Hervorgehoben sind die besten Zehn. Nach weiter eingegrenztem Sweeps sind in beiden Convolution-Layern 28 Filter gewählt und 54 Neuronen für das Dense-Layer. Den Quellcode des Testes enthält die Datei \emph{pepsi.wandb}.\\
 
-\subsection{Wahl der Aktivierungsfunktionen.}
+\subsection{Wahl der Aktivierungsfunktionen}
 
 Für die Wahl der Aktivierungsfunktionen wurden ebenfalls Sweeps durchgeführt. Die Ergebnisse sind in \autoref{fig:activ} abgebildet und die besten fünf hervorgehoben. Sie haben die Sigmoid-Funktion im Dense-Layer gemeinsam. Bei den Convolution-Layern zeigte über alle Kombinationen hinweg die Relu-Funktion die stärkste Tendenz zu hoher Genauigkeit. Entsprechend wurde gewählt: Relu, Relu, Sigmoid.
 
@@ -200,32 +200,7 @@ Für die Wahl der Aktivierungsfunktionen wurden ebenfalls Sweeps durchgeführt. 
 
 \subsection{BatchNormalization, Dropout und GaussianNoise}
 
-Als drittes wird das Netz um BatchNormalization vor den MaxPool und Dropout erweitert, um das Model zu stabilisieren. Bei anderen Reihenfolgen kommt es zu Widersprüchen \autocite{Li.2018} Anschließend wurden die Dropout- und GaussianNoise-Werte getestet, ebenfalls mit Weigts \& Biasses. Als erfolgreich erwiesen sich Dropouts von 0,4 und GaussianNoise von 0,75. \autocite{Cai.2020}. Der Code zu diesem Zeitpunkt ist der Datei \textcolor{red}{Titel} zu entnehmen.
-
-%\begin{lstlisting} [language=Python, caption=Python-Code, label=wandb]
-%	tf.keras.layers.InputLayer(input_shape=(28,28,1)),
-%	tf.keras.layers.Conv2D(filters=28, kernel_size=5, padding='same', activation='relu'),
-%	tf.keras.layers.BatchNormalization(),
-%	
-%	tf.keras.layers.MaxPooling2D(2,2),
-%	tf.keras.layers.Dropout(0.4),
-%	
-%	tf.keras.layers.Conv2D(filters=28, kernel_size=5, padding='same', activation='relu'),
-%	tf.keras.layers.BatchNormalization(),
-%	
-%	tf.keras.layers.MaxPooling2D(2,2),
-%	tf.keras.layers.Dropout(0.4),
-%	
-%	tf.keras.layers.Flatten(),
-%	
-%	tf.keras.layers.Dense(54, kernel_regularizer = tf.keras.regularizers.l2(0.07), activation = 'sigmoid'),
-%	tf.keras.layers.BatchNormalization(),
-%	
-%	tf.keras.layers.Dropout(0.4),
-%	tf.keras.layers.GaussianNoise(0.75),
-%	
-%	tf.keras.layers.Dense(10, activation='softmax')
-%\end{lstlisting}
+Als drittes wird das Netz um BatchNormalization vor den MaxPool und Dropout erweitert, um das Model zu stabilisieren. Bei anderen Reihenfolgen kommt es zu Widersprüchen \autocite{Li.2018} Anschließend wurden die Dropout- und GaussianNoise-Werte getestet, ebenfalls mit Weigts \& Biasses. Als erfolgreich erwiesen sich Dropouts von 0,4 und GaussianNoise von 0,75. \autocite{Cai.2020}.
 
 \subsection{Callbacks - Early Stopping und Variable Learning Rate}
 
@@ -264,20 +239,21 @@ Die Anzahl an Trainingsdaten wird mit einer Augmentation erweitert. Dazu kommt d
 
 Um die Genauigkeit weiter zu optimieren, wurde die Layer-Struktur nochmals angepasst. Zum einen werden anstelle eines Convolutional-Layers mit einer Filtergröße von 5 nun zwei aufeinanderfolgende mit Größe 3 verwendest. Dadurch ist das Netzwerk in der Lage sein, komplexere und nichtlineare Muster zu erlernen \autocite{Riad.2022}.\\
 Des Weiteren wird anstatt MaxPooling ein Strided Convolution für das Downsampling verwendet. Dadurch ergibt sich die gleiche Reduktion der Dimensionen, aber weitere trainierbare Parameter. Außerdem wird die Filtergröße des 2. Convolution-Blocks auf 56 erhöht. Bei Versuchen wurden hiermit bessere Ergebnisse als mit den zuvor gewählten 28 erreicht.\\
-Zusätzlich wird auch noch ein Dense-Layer mit 82 Neuronen ergänzt hinzugefügt. Für einen besseren Schutz gegen Overfitting wurde zudem nach jedem Dropout ein GaussianNoise eingefügt. Das dadurch entstandene Netz ist dem \textcolor{red}{Jupyterdateiname} zu entnehmen.
+Zusätzlich wird auch noch ein Dense-Layer mit 82 Neuronen ergänzt hinzugefügt. Für einen besseren Schutz gegen Overfitting wurde zudem nach jedem Dropout ein GaussianNoise eingefügt.
 
 \subsection{Auswertung}
 
 Die Genauigkeit erhöht sich damit zwar, aber auf Kosten von Rechenzeit. Mit diesen Änderungen wurde bei \textcolor{red}{Zahl} Trainingsdurchläufen \textcolor{red}{durchschnittlich mit standartabweichung erzielt, Histogramm}.
-Bei Trainings ohne EarlyStopping wurden maximal 99,77 Prozent Genauigkeit am Testdatensatz erreicht.
+Bei Trainings ohne EarlyStopping wurden maximal 99,77 Prozent Genauigkeit am Testdatensatz erreicht. Des finalen Netzes und der Evaluation mit Histogramm enthält das Notebook \emph{pepsi.evaluation}.
+
 
 \subsection{Sonstiges: Reduktion der Label}
 
-Um die Label zu Reduzieren wurde für jede Zahl das Label im Trainingsdatensatz ausgewählt, dass die höchste Kosinus-Ähnlichkeit zu den anderen besitzt. Der Code für diese Auswahl ist in \textcolor{red}{cosinussquere.jupyterdatei}.
+Um die Label zu Reduzieren wurde für jede Zahl das Label im Trainingsdatensatz ausgewählt, dass die höchste Kosinus-Ähnlichkeit zu den anderen besitzt. Der Code für diese Auswahl ist in \emph{minLabel}. Die Ergebnisse wurden allerdings nicht erfolgreich in ein Training integriert.
 
 \section{Tiny Schiller}
 
-Motiviert durch die Vorlesung zu den Large Language Model wurde neben den Versuchen an MNIST mit dem TinySchiller-Datensatz \autocite{Schutera.2023} \glqq gespielt\grqq. Ausgehend von dem Code in \autocite{Bansal.2021} wurde mit GRU und LSTM-Layern experimentiert. Liebevoll trägt das Modell den Namen \emph{drunkenSchiller}. Es hat den folgenden Satz zu DeepLearning formuliert: \glqq Deep Learningen und der alte schwert in dieser stadt geschlagen wird, der der geschichte...\grqq Allerdings hat es eine schwäche für Geschichte und wiederholt danach in Dauerschleife die Worte \glqq der\grqq und \glqq Geschichte\grqq. Hier besteht noch Optimierungsbedarf.
+Motiviert durch die Vorlesung zu den Large Language Model wurde neben den Versuchen an MNIST mit dem TinySchiller-Datensatz \autocite{Schutera.2023} \glqq gespielt\grqq. Ausgehend von dem Code in \autocite{Bansal.2021} wurde mit GRU und LSTM-Layern experimentiert. Liebevoll trägt das Modell den Namen \emph{drunkenSchiller}. Es hat den folgenden Satz zu DeepLearning formuliert: \glqq Deep Learningen und der alte schwert in dieser stadt geschlagen wird, der der geschichte...\grqq Allerdings hat es eine schwäche für Geschichte und wiederholt danach in Dauerschleife die Worte \glqq der\grqq und \glqq Geschichte\grqq. Hier besteht noch Optimierungsbedarf. Der Quellcode und das Modell sind unter dem Namen \emph{drunkenSchiller} gespeichert.
 
 \clearpage
 \printbibliography
