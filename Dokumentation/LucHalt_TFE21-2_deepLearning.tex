@@ -148,16 +148,16 @@ marginal
 
 \section{Methodik}
 
-Die Arbeit gliedert sich in zwei Teile. Der Erste enthält Versuche mit dem MNIST-Datensatz. Der Zweite einige Experimente mit dem TinySchiller-Datensatz\\
-Bei MNIST wird primär eine hohe maximale Genauigkeit durch automatisierte Untersuchungen angestrebt. Als Tool wird dafür Weigts\&Biases \autocite{wandb.sweep} verwendet. Es ermöglicht automatische Sweeps, sowie Werkzeuge zur Analyse und Dokumentation. Alle Untersuchungen gehen von dem Netz in \autoref{basis} aus, mit dem der erste Accuracy-Benchmark gesetzt wurde. Im ersten Schritt werden die Hyperparameter optimiert. Um möglichst viele automatisiert Kombinationen zu testen, wird GPU-Rechenleistung von Kaggle und Colab verwendet. Als Zweites werden die Callback in das Training integriert, gefolgt von einer Data-Augmentation. Die endgültige Qualität wird anhand einer Versuchsreihe mit \textcolor{red}{XY} Trainings ermittelt.\\
-Abschließend werden Versuche gezeigt, zur Reduktion der Label- und Parameter-Anzahl und Ergebnisse mit dem TinySchiller-Datensatz.
+Diese Arbeit beschäftigt sich mit Deep Learning und beinhaltet Untersuchungen mit den Datensätzen MNIST und TinySchiller.\\
+Bei MNIST wird primär eine hohe maximale Genauigkeit durch automatisierte Untersuchungen angestrebt. Als Tool wird dafür Weigts\&Biases \autocite{wandb.sweep} verwendet. Es ermöglicht automatische Sweeps, sowie Werkzeuge zur Analyse und Dokumentation. Ausgangssituation ist das Netz in \autoref{basis}. Im ersten Schritt werden die Hyperparameter optimiert. Um möglichst viele Kombinationen zu testen, wird GPU-Rechenleistung von Kaggle und Colab verwendet. Als Zweites werden die Callback in das Training integriert, gefolgt von einer Data-Augmentation. Die endgültige Qualität wird anhand einer Versuchsreihe mit 45 Trainings ermittelt.\\
+Abschließend werden noch Versuche zur Reduktion der Label-Anzahl und Ergebnisse mit dem TinySchiller-Datensatz gezeigt.
 
 \section{MNIST}
 
 \subsection{Grundlage}
 \label{sec:basis}
 
-Das Ausgangsnetz, von dem die Betrachtungen ausgehen ist in \autoref{basis} dargestellt. Es hat etwa 62-tausend Parameter. Kompiliert mit dem Adam Optimizer, einer Learning-Rate von 0.003 und einem Training mit dem vollständigen Trainingsdatensatz (60000 Label) bei einer Batch-Size von 512 über 100 Epochen erreichte es 99,47\% Genauigkeit.
+Das Ausgangsnetz, von dem die Betrachtungen ausgehen ist in \autoref{basis} dargestellt. Es hat etwa 62-tausend Parameter. Kompiliert mit dem Adam Optimizer, einer Learning-Rate von 0.003 und einem Training mit dem vollständigen Trainingsdatensatz (60000 Label) bei einer 512er Batch-Size über 100 Epochen erreichte es 99,47\% Genauigkeit.
 
 \begin{lstlisting}[language=Python, caption=Grundlagen-Netz, label=basis]
 	InputLayer(input_shape=(28,28,1)),
@@ -183,9 +183,9 @@ Das Ausgangsnetz, von dem die Betrachtungen ausgehen ist in \autoref{basis} darg
 	\label{fig:filter}
 \end{figure}
 
-Zunächst erfolgt die Untersuchung der Filter-Anzahlen in den Convolution-Layern und der Neuronen-Anzahl des ersten Dense-Layer. Das Output-Dense-Layer wird bei 10 Neuronen und der \emph{softmax}-Aktivierungsfunktion belassen, damit jeder Klasse eine Wahrscheinlichkeit zugeordnet wird.\\
-Als Methode ist in Weights\&Biases \emph{bayes}, die Bayes'sche Optimierung, zur Maximierung der val\_accuracy gewählt. Dabei werden die Hyperparameter aus einem vorgegebenen Raster gewählt, ein Training durchgeführt und die Ergebnisse dokumentiert. Das Raster für die Filter und Neuronen wurde so gewählt, dass (1) eine Abstufung im Convolution-Teil erfolgt, (2) auch Zahlen nicht zur Basis zwei getestet werden und (3) die Parameteranzahl nicht exorbitant groß wird. Das erste Kriterium erwies sich als kontraproduktiv und wird später verworfen.\\
-Die Ergebnisse von circa 100 Kombinationen sind in \autoref{fig:filter} dargestellt. Hervorgehoben sind die besten Zehn. Nach weiter eingegrenztem Sweeps sind in beiden Convolution-Layern 28 Filter gewählt und 54 Neuronen für das Dense-Layer. Den Quellcode des Testes enthält die Datei \emph{pepsi.wandb}.\\
+Zunächst erfolgt die Untersuchung der Filter-Anzahlen in den Convolution-Layern und der Neuronen-Anzahl des ersten Dense-Layer. Das Output-Dense-Layer wird bei 10 Neuronen und der softmax-Aktivierungsfunktion belassen, damit jeder Klasse eine Wahrscheinlichkeit zugeordnet wird.\\
+Als Methode ist in Weights\&Biases bayes, die Bayes'sche Optimierung, zur Maximierung der val\_accuracy gewählt. Dabei werden die Hyperparameter aus einem vorgegebenen Raster gewählt, ein Training durchgeführt und die Ergebnisse dokumentiert. Das Raster für die Filter und Neuronen wurde so gewählt, dass (1) eine Abstufung im Convolution-Teil erfolgt, (2) auch Zahlen nicht zur Basis zwei getestet werden und (3) die Parameteranzahl nicht exorbitant groß wird. Das erste Kriterium erwies sich als kontraproduktiv und wird später verworfen.\\
+Die Ergebnisse von circa 100 Kombinationen sind in \autoref{fig:filter} dargestellt. Hervorgehoben sind die besten zehn Durchläufe. Nach weiter eingegrenzten Sweeps sind in beiden Convolution-Layern 28 Filter und 54 Neuronen für das Dense-Layer gewählt. Den Quellcode des Testes enthält die Datei \emph{pepsi.wandb}.\\
 
 \subsection{Wahl der Aktivierungsfunktionen}
 
@@ -200,11 +200,11 @@ Für die Wahl der Aktivierungsfunktionen wurden ebenfalls Sweeps durchgeführt. 
 
 \subsection{BatchNormalization, Dropout und GaussianNoise}
 
-Als drittes wird das Netz um BatchNormalization vor den MaxPool und Dropout erweitert, um das Model zu stabilisieren. Bei anderen Reihenfolgen kommt es zu Widersprüchen \autocite{Li.2018} Anschließend wurden die Dropout- und GaussianNoise-Werte getestet, ebenfalls mit Weigts \& Biasses. Als erfolgreich erwiesen sich Dropouts von 0,4 und GaussianNoise von 0,75. \autocite{Cai.2020}.
+Als drittes wird das Netz um BatchNormalizations vor den MaxPool und Dropout erweitert, um das Model zu stabilisieren. Bei anderen Reihenfolgen der Layer kommt es zu Widersprüchen. \autocite{Li.2018}\autocite{Cai.2020} Anschließend wurden die Dropout- und GaussianNoise-Werte getestet (ebenfalls mit Weigts \& Biasses). Als erfolgreich erwiesen sich Dropouts von 0,4 und GaussianNoise von 0,75.	
 
 \subsection{Callbacks - Early Stopping und Variable Learning Rate}
 
-Nach der Optimierung der Hyperparameter des Netzes, wird der Trainingsprozess verbessert, indem er mit Callbacks angereichert wird. Zum einen wird EarlyStopping eingesetzt, um wenig erfolgreiche Trainings abzubrechen. Um darüber hinaus schneller den Grenzwert zu erreichen wird eine Variable Learning Rate verwendet. In Kombination mit dem EarlyStopping zeigte eine gleichmäßige Reduktion mit jeder Epoche bessere Ergebnisse, als die Methode ReduceLROnPlateau. In Kombination mit einer Batch Size von 32 ergaben sich die besten Ergebnisse
+Nach der Optimierung der Hyperparameter des Netzes, wird der Trainingsprozess verbessert, indem er mit Callbacks angereichert wird. Zum einen wird EarlyStopping eingesetzt, um wenig erfolgreiche Trainings abzubrechen. Um darüber hinaus schneller den Grenzwert zu erreichen wird eine Variable Learning Rate verwendet. In Kombination mit dem EarlyStopping zeigte eine gleichmäßige Reduktion mit jeder Epoche bessere Ergebnisse, als die Methode ReduceLROnPlateau. In Kombination mit einer Batch Size von 32 ergaben sich die besten Ergebnisse.
 
 \begin{lstlisting}[language=Python, caption=Callbacks, label=callback]
 	er = EarlyStopping(
