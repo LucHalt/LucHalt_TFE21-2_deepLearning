@@ -16,4 +16,4 @@ Ich empfehle zuerst nur dieses Notebook zu betrachten und die Dokumentation zu l
 > Durch das Einblenden des File-Browsers (Strg+Shift+F) in Jupyter-Notebook ist auch der Zugriff auf die anderen Notebooks über den obigen Binder einfach möglich.
 
 ## Danke
-...für die Vorlesung! Sie hat mein Interesse an diesem Thema geweckt.
+...für die Vorlesung!
