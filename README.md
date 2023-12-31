@@ -6,7 +6,8 @@ Dieses Repository beinhaltet die Dokumentation, den Quellcode und alle mitgelten
 - MatrNr.:  6682645
 
 ## Leseemfehlung
-Die Abgabe beinhaltet vor allem die ausführliche Erarbeitung meines Accuracy-Benchmark-Netzes. Für diese Abgabe wurde der Code um eine Bewertung der Qualität durch die Betrachtung mehrer Trainingsdurchläufe ergänzt. Das dazu gehörige Jupyter-Notebook öffnet mit diesem Binder: 
+Die Abgabe beinhaltet vor allem die ausführliche Erarbeitung meines Accuracy-Benchmark-Netzes. Für diese Abgabe wurde der Code um eine Bewertung der Qualität durch die Betrachtung mehrer Trainingsdurchläufe ergänzt. Das dazu gehörige Jupyter-Notebook öffnet mit diesem Binder:
+
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LucHalt/LucHalt_TFE21-2_deepLearning/main?labpath=Code%2Fpepsi.evaluation.ipynb)
 
 Ich empfehle zuerst nur dieses Notebook zu betrachten und die Dokumentation zu lesen. In der Dokumentation wird auf weitere Notebooks verwiesen. Sie beinhalten Untersuchungen mit Weigths & Biases, sowie weitere Versuche mit den Datensätzen MNIST und TinySchiller. Ich rate diese im Anschluss anzuschauen.
